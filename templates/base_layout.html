@@ -1,0 +1,34 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="{% static 'styles.css'%}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Billingham Biomass</title>
+  </head>
+  <body>
+    <div class="head">
+      <a href="{% url 'home' %}" ><img src="{% static 'BB.png' %}" class="logo" alt="Biomass-Logo" ></img></a>
+    <nav class="navigation">
+      <ul>
+        {% if user.is_authenticated %}
+        <li>
+          <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+            {% csrf_token %}
+            Hello {{user}} <button type="submit"> Log Out </button>
+          </form>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+</div>
+
+    <div class="wrapper">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+  </body>
+</html>

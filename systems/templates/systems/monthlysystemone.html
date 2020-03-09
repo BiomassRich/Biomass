@@ -1,0 +1,11 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+<div class="wrapper">
+  <h1>Monthly Meter Reading System One</h1>
+  <form class="site-form" action="{%url 'systems:monthlysystemone'%}" method="post">
+      {% csrf_token %}
+      {{form}}
+    <input type="submit" value="Add Entry">
+  </form>
+</div>
+{% endblock %}

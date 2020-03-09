@@ -1,0 +1,11 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+<div class="wrapper">
+  <h1>Fuel Log System Seven</h1>
+  <form class="site-form" action="{%url 'systems:fuellogsystemseven'%}" method="post">
+      {% csrf_token %}
+      {{form}}
+    <input type="submit" value="Add Entry">
+  </form>
+</div>
+{% endblock %}

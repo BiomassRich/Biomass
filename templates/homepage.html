@@ -1,0 +1,84 @@
+{% extends 'base_layout.html'%}
+{% load static from staticfiles %}
+{% block content %}
+<div class="Fuel-Deliver">
+<h1>Fuel Delivery Log</h1>
+<span>
+<a class="link-button" href="{% url 'fuelrecords:fuelrecord'%}">Fuel Delivery Log</a>
+</span>
+</div>
+  <span><h1>Systems</h1></span>
+  <div class="systems-list">
+    <div class="card">
+    <a href="{%url 'systems:systemone'%}"><img class="images" src="{%static '1.jpg'%}" alt="System One"></img></a>
+    <div class="container">
+      <a class="link-button" href="{% url 'systems:fuellogsystemone'%}">Fuel Log</a>
+      <a class="link-button" href="{% url 'systems:monthlysystemone'%}">Monthly Meter</a>
+    </div>
+    </div>
+    <div class="card">
+    <a href="{%url 'systems:systemtwo'%}"><img class="images" src="{%static '2.jpg'%}" alt="System Two"></img></a>
+    <div class="container">
+      <a class="link-button" href="{% url 'systems:fuellogsystemtwo'%}">Fuel Log</a>
+      <a class="link-button" href="{% url 'systems:monthlysystemtwo'%}">Monthly Meter</a>
+    </div>
+    </div>
+    <div class="card">
+    <a href="{%url 'systems:systemthree'%}"><img class="images" src="{%static '3.jpg'%}" alt="System Three"></img></a>
+    <div class="container">
+      <a class="link-button" href="{% url 'systems:fuellogsystemthree'%}">Fuel Log</a>
+      <a class="link-button" href="{% url 'systems:monthlysystemthree'%}">Monthly Meter</a>
+    </div>
+    </div>
+    <div class="card">
+    <a href="{%url 'systems:systemfour'%}"><img class="images" src="{%static '4.jpg'%}" alt="System Four"></img></a>
+    <div class="container">
+      <a class="link-button" href="{% url 'systems:fuellogsystemfour'%}">Fuel Log</a>
+      <a class="link-button" href="{% url 'systems:monthlysystemfour'%}">Monthly Meter</a>
+    </div>
+    </div>
+    <div class="card">
+    <a href="{%url 'systems:systemfive'%}"><img class="images" src="{%static '5.jpg'%}" alt="System Five"></img></a>
+    <div class="container">
+      <a class="link-button" href="{% url 'systems:fuellogsystemfive'%}">Fuel Log</a>
+      <a class="link-button" href="{% url 'systems:monthlysystemfive'%}">Monthly Meter</a>
+    </div>
+    </div>
+    <div class="card">
+    <a href="{%url 'systems:systemsix'%}"><img class="images" src="{%static '6.jpg'%}" alt="System Six"></img></a>
+    <div class="container">
+      <a class="link-button" href="{% url 'systems:fuellogsystemsix'%}">Fuel Log</a>
+      <a class="link-button" href="{% url 'systems:monthlysystemsix'%}">Monthly Meter</a>
+    </div>
+    </div>
+    <div class="card">
+    <a href="{%url 'systems:systemseven'%}"><img class="images" src="{%static '7.jpg'%}" alt="System Seven"></img></a>
+    <div class="container">
+      <a class="link-button" href="{% url 'systems:fuellogsystemseven'%}">Fuel Log</a>
+      <a class="link-button" href="{% url 'systems:monthlysystemseven'%}">Monthly Meter</a>
+    </div>
+    </div>
+    <div class="card">
+    <a href="{%url 'systems:systemeight'%}"><img class="images" src="{%static '8.jpg'%}" alt="System Eight"></img></a>
+    <div class="container">
+      <a class="link-button" href="{% url 'systems:fuellogsystemeight'%}">Fuel Log</a>
+      <a class="link-button" href="{% url 'systems:monthlysystemeight'%}">Monthly Meter</a>
+    </div>
+    </div>
+    <div class="card">
+    <a href="{%url 'systems:systemnine'%}"><img class="images" src="{%static '9.jpg'%}" alt="System Nine"></img></a>
+    <div class="container">
+      <a class="link-button" href="{% url 'systems:fuellogsystemnine'%}">Fuel Log</a>
+      <a class="link-button" href="{% url 'systems:monthlysystemnine'%}">Monthly Meter</a>
+    </div>
+    </div>
+    <div class="card">
+    <a href="{%url 'systems:systemten'%}"><img class="images" src="{%static '10.jpg'%}" alt="System Ten"></img></a>
+    <div class="container">
+      <a class="link-button" href="{% url 'systems:fuellogsystemten'%}">Fuel Log</a>
+      <a class="link-button" href="{% url 'systems:monthlysystemten'%}">Monthly Meter</a>
+    </div>
+    </div>
+    </div>
+  </div>
+{% endblock %}
