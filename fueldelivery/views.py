@@ -7,7 +7,7 @@ from .models import *
 # Create your views here.
 @login_required(login_url="/accounts/login/")
 def FuelDeliveryLog(request):
-    entries = FuelLogDeliveryMod.objects.all().order_by('date')
+    entriesLog = FuelLogDeliveryMod.objects.all().order_by('entry_date')
     if request.method == 'POST':
         form = forms.FuelLogDeliveryForm(request.POST)
         if form.is_valid():
@@ -17,4 +17,14 @@ def FuelDeliveryLog(request):
             return redirect('home')
     else:
         form = forms.FuelLogDeliveryForm()
-    return render(request,'fueldelivery/fuelrecord.html',{'form':form,'entry':entries})
+    return render(request,'fueldelivery/fuelrecord.html',{'form':form,'entriesLog':entriesLog})
+
+@login_required(login_url="/accounts/login/")
+def ViewFuelDeliverylog(request):
+    entriesLog = FuelLogDeliveryMod.objects.all().order_by('entry_date')
+    return render(request,'fueldelivery/viewfuelrecord.html',{'entriesLog':entriesLog})
+
+@login_required(login_url="/accounts/login/")
+def FuelDeliveryRecords(request,id):
+    id = FuelLogDeliveryMod.objects.get(id=id)
+    return render(request,'fueldelivery/idrecord.html',{'id':id})

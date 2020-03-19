@@ -39,4 +39,6 @@ urlpatterns = [
     path('systemten',views.systemTen, name='systemten'),
     path('systemten/fuellog',views.fuelLogSystemTen, name="fuellogsystemten"),
     path('systemten/monthlymeter',views.monthlySystemTen,name='monthlysystemten'),
+    path('systemone/fuellog/<id>/',views.idfuelLogSystemOne, name='idfuellogsystemone'),
+    path('systemone/monthlymeter/<id>/',views.idmonthlySystemOne, name='idmonthlysystemone'),
 ]

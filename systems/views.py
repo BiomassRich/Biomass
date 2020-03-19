@@ -5,44 +5,74 @@ from . import forms
 from .models import *
 
 @login_required(login_url="/accounts/login/")
+def idfuelLogSystemOne(request,id):
+    id = FuelLogSystemOneMod.objects.get(id=id)
+    return render(request,'systems/idfuellogsystemone.html',{'id':id})
+
+@login_required(login_url="/accounts/login/")
+def idmonthlySystemOne(request,id):
+    id = monthlyMeterSystemOneMod.objects.get(id=id)
+    return render(request,'systems/idmonthlysystemone.html',{'id':id})
+
+@login_required(login_url="/accounts/login/")
 def systemOne(request):
-    return render(request,'systems/systemone.html')
+    entriesMonth = monthlyMeterSystemOneMod.objects.all().order_by('date')
+    entriesFuel = FuelLogSystemOneMod.objects.all().order_by('date')
+    return render(request,'systems/systemone.html',{'entriesMonth':entriesMonth,'entriesFuel':entriesFuel})
 
 @login_required(login_url="/accounts/login/")
 def systemTwo(request):
-    return render(request,'systems/systemtwo.html')
+    entriesMonth = monthlyMeterSystemTwoMod.objects.all().order_by('date')
+    entriesFuel = FuelLogSystemTwoMod.objects.all().order_by('date')
+    return render(request,'systems/systemtwo.html',{'entriesMonth':entriesMonth,'entriesFuel':entriesFuel})
 
 @login_required(login_url="/accounts/login/")
 def systemThree(request):
-    return render(request,'systems/systemthree.html')
+    entriesMonth = monthlyMeterSystemThreeMod.objects.all().order_by('date')
+    entriesFuel = FuelLogSystemThreeMod.objects.all().order_by('date')
+    return render(request,'systems/systemthree.html',{'entriesMonth':entriesMonth,'entriesFuel':entriesFuel})
 
 @login_required(login_url="/accounts/login/")
 def systemFour(request):
-    return render(request,'systems/systemfour.html')
+    entriesMonth = monthlyMeterSystemFourMod.objects.all().order_by('date')
+    entriesFuel = FuelLogSystemFourMod.objects.all().order_by('date')
+    return render(request,'systems/systemfour.html',{'entriesMonth':entriesMonth,'entriesFuel':entriesFuel})
 
 @login_required(login_url="/accounts/login/")
 def systemFive(request):
-    return render(request,'systems/systemfive.html')
+    entriesMonth = monthlyMeterSystemFiveMod.objects.all().order_by('date')
+    entriesFuel = FuelLogSystemFiveMod.objects.all().order_by('date')
+    return render(request,'systems/systemfive.html',{'entriesMonth':entriesMonth,'entriesFuel':entriesFuel})
 
 @login_required(login_url="/accounts/login/")
 def systemSix(request):
-    return render(request,'systems/systemsix.html')
+    entriesMonth = monthlyMeterSystemSixMod.objects.all().order_by('date')
+    entriesFuel = FuelLogSystemSixMod.objects.all().order_by('date')
+    return render(request,'systems/systemsix.html',{'entriesMonth':entriesMonth,'entriesFuel':entriesFuel})
 
 @login_required(login_url="/accounts/login/")
 def systemSeven(request):
-    return render(request,'systems/systemseven.html')
+    entriesMonth = monthlyMeterSystemSevenMod.objects.all().order_by('date')
+    entriesFuel = FuelLogSystemSevenMod.objects.all().order_by('date')
+    return render(request,'systems/systemseven.html',{'entriesMonth':entriesMonth,'entriesFuel':entriesFuel})
 
 @login_required(login_url="/accounts/login/")
 def systemEight(request):
-    return render(request,'systems/systemeight.html')
+    entriesMonth = monthlyMeterSystemEightMod.objects.all().order_by('date')
+    entriesFuel = FuelLogSystemEightMod.objects.all().order_by('date')
+    return render(request,'systems/systemeight.html',{'entriesMonth':entriesMonth,'entriesFuel':entriesFuel})
 
 @login_required(login_url="/accounts/login/")
 def systemNine(request):
-    return render(request,'systems/systemnine.html')
+    entriesMonth = monthlyMeterSystemNineMod.objects.all().order_by('date')
+    entriesFuel = FuelLogSystemNineMod.objects.all().order_by('date')
+    return render(request,'systems/systemnine.html',{'entriesMonth':entriesMonth,'entriesFuel':entriesFuel})
 
 @login_required(login_url="/accounts/login/")
 def systemTen(request):
-    return render(request,'systems/systemten.html')
+    entriesMonth = monthlyMeterSystemTenMod.objects.all().order_by('date')
+    entriesFuel = FuelLogSystemTenMod.objects.all().order_by('date')
+    return render(request,'systems/systemten.html',{'entriesMonth':entriesMonth,'entriesFuel':entriesFuel})
 
 @login_required(login_url="/accounts/login/")
 def monthlySystemOne(request):
@@ -308,7 +338,7 @@ def monthlySystemTen(request):
 def fuelLogSystemOne(request):
     entries = FuelLogSystemOneMod.objects.all().order_by('date')
     if request.method == 'POST':
-        form = forms.AddFuelLogOneForm(request.POST)
+        form = forms.AddFuelLogOneForm(request.POST, request.FILES)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.staff = request.user

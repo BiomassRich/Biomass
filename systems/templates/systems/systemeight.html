@@ -1,7 +1,55 @@
 {% extends 'base_layout.html' %}
 {% block content %}
-<div class="wrapper">
-  <h1>System Eight</h1>
-  <p>Not completed page</p>
+<div class="monthly">
+  <h1>System Eight Monthly Meter Entries</h1>
+  <table>
+    <thead>
+    <th>ID</th>
+    <th>System</th>
+    <th>Serial Number</th>
+    <th>Current Meter Reading</th>
+    <th>Previous Meter Reading</th>
+    <th>Difference</th>
+    <th>Date</th>
+    <th>Staff</th>
+    </thead>
+    <tbody>
+  {% for entryMonth in entriesMonth %}
+  <tr>
+      <td>{{entryMonth.id}}</td>
+      <td>{{entryMonth.system}}</td>
+      <td>{{entryMonth.serial_number}}</td>
+      <td>{{entryMonth.current_meter_reading}}</td>
+      <td>{{entryMonth.previous_meter_reading}}</td>
+      <td>{{entryMonth.difference}}</td>
+      <td>{{entryMonth.date}}</td>
+      <td>{{entryMonth.staff}}</td>
+      </tr>
+    {% endfor %}
+      </tbody>
+    </table>
+</div>
+
+<div class="fuelLog">
+  <h1>System Eight Fuel Log Entries</h1>
+  <table>
+    <thead>
+    <th>ID</th>
+    <th>Buckets Added</th>
+    <th>Date</th>
+    <th>Day</th>
+    <th>Staff</th>
+    </thead>
+    <tbody>
+  {% for entryFuel in entriesFuel %}
+  <tr>
+      <td>{{entryFuel.id}}</td>
+      <td>{{entryFuel.buckets_added}}</td>
+      <td>{{entryFuel.date}}</td>
+      <td>{{entryFuel.day}}</td>
+      <td>{{entryFuel.staff}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
 </div>
 {% endblock %}

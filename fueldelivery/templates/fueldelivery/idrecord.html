@@ -1,0 +1,19 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+<div class="record-view">
+  <h2>ID: {{id.id}}</h2>
+  <p>Delivery Ref Number: {{id.delivery_ref_number}}</p>
+  <p>Type of Biomass: {{id.type_of_biomass}}</p>
+  <p>Description/Moisture Content: {{id.description_moisture_content}}</p>
+  <p>Source/Supplier: {{id.source_supplier}}</p>
+  <p>Quantity: {{id.quantity}}</p>
+  <p>BSL Number: {{id.BSL_Number}}</p>
+  <p>Delivery Note Number: {{id.delivery_note_number}}</p>
+  <p>Delivery Date: {{id.delivery_date}}</p>
+  <p>Entry Date: {{id.entry_date}}</p>
+  <p>Staff: {{id.staff}}</p>
+</div>
+<div>
+<a class="link-button" href="{% url 'fuelrecords:viewfuelrecord'%}">Back</a>
+</div>
+{% endblock %}

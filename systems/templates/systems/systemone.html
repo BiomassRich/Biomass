@@ -1,7 +1,61 @@
 {% extends 'base_layout.html' %}
 {% block content %}
-<div class="wrapper">
-  <h1>System One</h1>
-  <p>Not completed page</p>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<canvas id="myChart" width="300" height="300"></canvas>
+<script>
+  let myChart = document.getElementById('myChart').getContext('2d');
+</script>
+<div class="monthly">
+  <h1>System One Monthly Meter Entries</h1>
+  <table>
+    <thead>
+    <th>ID</th>
+    <th>System</th>
+    <th>Serial Number</th>
+    <th>Current Meter Reading</th>
+    <th>Previous Meter Reading</th>
+    <th>Difference</th>
+    <th>Date</th>
+    <th>Staff</th>
+    </thead>
+    <tbody>
+  {% for entryMonth in entriesMonth %}
+  <tr>
+      <td><a href="{% url 'systems:idmonthlysystemone' id=entryMonth.id%}">{{entryMonth.id}}</a></td>
+      <td>{{entryMonth.system}}</td>
+      <td>{{entryMonth.serial_number}}</td>
+      <td>{{entryMonth.current_meter_reading}}</td>
+      <td>{{entryMonth.previous_meter_reading}}</td>
+      <td>{{entryMonth.difference}}</td>
+      <td>{{entryMonth.date}}</td>
+      <td>{{entryMonth.staff}}</td>
+      </tr>
+    {% endfor %}
+      </tbody>
+    </table>
+</div>
+
+<div class="fuelLog">
+  <h1>System One Fuel Log Entries</h1>
+  <table>
+    <thead>
+    <th>ID</th>
+    <th>Buckets Added</th>
+    <th>Date</th>
+    <th>Day</th>
+    <th>Staff</th>
+    </thead>
+    <tbody>
+  {% for entryFuel in entriesFuel %}
+  <tr>
+      <td><a href="{% url 'systems:idfuellogsystemone' id=entryFuel.id%}">{{entryFuel.id}}</a></td>
+      <td>{{entryFuel.buckets_added}}</td>
+      <td>{{entryFuel.date}}</td>
+      <td>{{entryFuel.day}}</td>
+      <td>{{entryFuel.staff}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
 </div>
 {% endblock %}

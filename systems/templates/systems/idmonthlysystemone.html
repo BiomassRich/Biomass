@@ -1,0 +1,17 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+<div class="record-view">
+  <h2>ID: {{id.id}}</h2>
+  <p>System: {{id.system}}</p>
+  <p>Serial Number: {{id.serial_number}}</p>
+  <p>Current Meter Reading: {{id.current_meter_reading}}</p>
+  <p>Previous Meter Reading: {{id.previous_meter_reading}}</p>
+  <p>Difference: {{id.difference}}</p>
+  <p>Notes: {{id.notes}}</p>
+  <p>Date Added: {{id.date}}</p>
+  <p>Staff: {{id.staff}}</p>
+</div>
+<div>
+<a class="link-button" href="{% url 'systems:systemone'%}">Back</a>
+</div>
+{% endblock %}

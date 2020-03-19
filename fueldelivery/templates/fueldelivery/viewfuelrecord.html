@@ -1,0 +1,38 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+<div class="fuelLog">
+  <h1>Fuel Delivery Log Entries</h1>
+  <table>
+    <thead>
+    <th>ID</th>
+    <th>Delivery Ref Number</th>
+    <th>Type of Biomass</th>
+    <th>Description/Moisture Content</th>
+    <th>Source/Supplier</th>
+    <th>Quantity</th>
+    <th>BSL Number</th>
+    <th>Delivery Note Number</th>
+    <th>Delivery Date</th>
+    <th>Entry Date</th>
+    <th>Staff</th>
+    </thead>
+    <tbody>
+
+  {% for entryLog in entriesLog %}
+  <tr>
+      <td><a href="{% url 'fuelrecords:idRecord' id=entryLog.id%}">{{entryLog.id}}</a></td>
+      <td>{{entryLog.delivery_ref_number}}</td>
+      <td>{{entryLog.type_of_biomass}}</td>
+      <td>{{entryLog.description_moisture_content}}</td>
+      <td>{{entryLog.source_supplier}}</td>
+      <td>{{entryLog.quantity}}</td>
+      <td>{{entryLog.BSL_Number}}</td>
+      <td>{{entryLog.delivery_note_number}}</td>
+      <td>{{entryLog.delivery_date}}</td>
+      <td>{{entryLog.entry_date}}</td>
+      <td>{{entryLog.staff}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+</div>
+{% endblock %}

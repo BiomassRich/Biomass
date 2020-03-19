@@ -10,4 +10,6 @@ app_name = 'fuelrecords'
 
 urlpatterns = [
     path('fuelrecordlog',views.FuelDeliveryLog, name='fuelrecord'),
+    path('viewfuelrecordlog',views.ViewFuelDeliverylog, name='viewfuelrecord'),
+    path('<id>/',views.FuelDeliveryRecords, name='idRecord'),
 ]

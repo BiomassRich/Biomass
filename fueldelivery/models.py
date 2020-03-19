@@ -17,4 +17,4 @@ class FuelLogDeliveryMod(models.Model):
     staff = models.ForeignKey(User,on_delete=models.CASCADE)
 
     def __str__(self):
-        return str(self.id) + " " + str(self.day) + " "  + str(self.staff)
+        return str(self.id) + " " + str(self.entry_day) + " "  + str(self.staff)
