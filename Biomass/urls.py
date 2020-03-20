@@ -14,6 +14,7 @@ urlpatterns = [
     path('accounts/',include('accounts.urls')),
     path('systems/' ,include('systems.urls')),
     path('fueldelivery/' ,include('fueldelivery.urls')),
+    path('reports/' ,include('reports.urls')),
     path('',views.homepage,name="home"),
 ]
 urlpatterns += staticfiles_urlpatterns()

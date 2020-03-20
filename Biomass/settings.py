@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '&i!^y*t*aq2in75jb8e5gl)h885xy%v_4e#lf=_e9(kv6!=%+$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['biomass.pythonanywhere.com','127.0.0.1', 'localhost']
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'systems',
     'accounts',
     'fueldelivery',
+    'reports',
 ]
 
 MIDDLEWARE = [
@@ -112,7 +113,7 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False
 
 USE_TZ = True
 

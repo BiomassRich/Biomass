@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Chart.js</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js">
+
+    </script>
+
+    <body>
+    <div class="charts">
+      <canvas id="myChart"></canvas>
+
+    </div>
+    <script type="text/javascript">
+      let myChart = document.getElementById('myChart').getContext('2d');
+
+      let massPopChart = new Chart(myChart, {
+        type:'bar',
+        data:{
+          labels:[{%for entryFuel in entriesFuel %}{%if entryFuel.day|date:"dmY" > "07032020" and entryFuel.day|date:"dmY" < "10032020"%}"{{entryFuel.day}}",
+          {% endif %}
+          {% endfor%}],
+          datasets:[{
+            label:'Buckets Added',
+            data: [{%for entryFuel in entriesFuel %}{%if entryFuel.day|date:"dmy" > "07032020" and entryFuel.day|date:"dmY" < "10032020"%} "{{entryFuel.buckets_added}}",
+            {% endif %}
+            {% endfor %},
+            ],
+            backgroundColor:'green',
+            borderWidth:1,
+            borderColor:'#777',
+            hoverBorderWidth:3,
+            hoverBorderColor:'#000'
+          }],
+        },
+        options:{
+          scales:{
+            yAxes:[{
+              ticks:{
+                beginAtZero:true
+              }
+            }]
+          },
+          responsive:true,
+          title:{
+            display:true,
+            text:'some stuff',
+            fontSize:25,
+          },
+
+        },
+      });
+    </script>
+  </body>
+</html>
