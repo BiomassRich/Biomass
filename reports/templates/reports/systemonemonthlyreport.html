@@ -1,0 +1,35 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+<head>
+  <title>System One Monthly Meter Report</title>
+<div class="monthly">
+  <h1>System One Monthly Meter Entries</h1>
+  <table>
+    <thead>
+    <th>ID</th>
+    <th>System</th>
+    <th>Serial Number</th>
+    <th>Current Meter Reading</th>
+    <th>Previous Meter Reading</th>
+    <th>Difference</th>
+    <th>Date</th>
+    <th>Staff</th>
+    </thead>
+    <tbody>
+  {% for entryMonth in entriesMonth %}
+  <tr>
+      <td><a href="{% url 'systems:idmonthlysystemone' id=entryMonth.id%}">{{entryMonth.id}}</a></td>
+      <td>{{entryMonth.system}}</td>
+      <td>{{entryMonth.serial_number}}</td>
+      <td>{{entryMonth.current_meter_reading}}</td>
+      <td>{{entryMonth.previous_meter_reading}}</td>
+      <td>{{entryMonth.difference}}</td>
+      <td>{{entryMonth.date}}</td>
+      <td>{{entryMonth.staff}}</td>
+      </tr>
+    {% endfor %}
+      </tbody>
+    </table>
+</div>
+
+{% endblock %}
