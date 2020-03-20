@@ -3,6 +3,17 @@
   padding:50px;
 }
 
+.record-view h2{
+  background-color: #4CAF50;
+  border: solid 5px rgba(255,255,255,0.5);
+  color:white;
+}
+
+.record-view p{
+  display:table;
+  background-color:white;
+}
+
 .record-view img{
   height:300px;
   width:300px;
