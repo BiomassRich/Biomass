@@ -116,3 +116,66 @@ body{
 }
 
 }
+
+@media only screen and (max-width: 350px){
+.logo{
+  height:5em;
+}
+body{
+  display:block;
+  margin:auto;
+  width: 100%;
+  text-align:center;
+  transform:translateY(30%);
+}
+.userform input{
+  font-size:12px;
+}
+
+.passform input{
+  font-size:12px;
+}
+
+}
+
+@media only screen and (max-width: 250px){
+.logo{
+  height:4em;
+}
+body{
+  display:block;
+  margin:auto;
+  width: 100%;
+  text-align:center;
+  transform:translateY(30%);
+}
+.userform input{
+  font-size:10px;
+}
+
+.passform input{
+  font-size:10px;
+}
+
+}
+
+@media only screen and (max-width: 210px){
+.logo{
+  height:4em;
+}
+body{
+  display:block;
+  margin:auto;
+  width: 100%;
+  text-align:center;
+  transform:translateY(30%);
+}
+.userform input{
+  font-size:8px;
+}
+
+.passform input{
+  font-size:8px;
+}
+
+}
