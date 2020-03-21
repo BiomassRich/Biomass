@@ -1,16 +1,41 @@
-{% extends 'base_layout.html' %}
-
-{% block content %}
-<h1>Log In</h1>
+{% load static from staticfiles %}
+<head>
+  <link rel="stylesheet" href="{% static 'homestyles.css'%}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+</head>
+<body>
+<img src="{% static 'Biomass.png'%}" class='logo' alt="Biomass-logo">
 <form class="site-form" action="{% url 'accounts:login'%}" method="post">
   {% csrf_token %}
-  {{form}}
-
+  {% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="errorlogin">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+        <div class="errorlogin">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+    {% endif %}
+  <div class="userform">
+      <img class="loginimages" src="{%static 'User.png'%}" alt="user-img">
+  <input type="text" class="form-control" name="username" autofocus="" required="" id="id_username" placeholder="Username">
+  </div>
+  <div class="passform">
+  <img class="loginimages" src="{%static 'Pass.png'%}" alt="">
+  <input type="password" class="form-control" name="password" required="" id="id_password" placeholder="Password">
+  </div>
   {% if request.GET.next %}
     <input type="hidden" name="next" value="{{request.GET.next}}">
 
   {% endif %}
-  <input type="submit" value="Log In">
+  <div class="loginsubmit">
+  <input type="submit" id="login" value="Log In">
+  </div>
 </form>
-
-{% endblock %}
+</body>

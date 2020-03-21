@@ -1,0 +1,118 @@
+@font-face {
+    font-family: "Kefa";
+    src: local(Kefa.ttf) format("truetype");
+}
+
+* {
+  font-family:Kefa;
+}
+
+html {
+    height: 100%;
+}
+body{
+  background-image: linear-gradient(#006fb7, #8ec33c);
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.logo{
+  height:7em;
+}
+body{
+  display:block;
+  margin:auto;
+  width: 50%;
+  text-align:center;
+  transform:translateY(25%)
+}
+
+input{
+  border-radius:50px;
+  padding:10px;
+}
+.userform{
+  padding:10px;
+}
+.userform input{
+  background-color:#cde3e3;
+}
+.userform input::placeholder{
+  color:white;
+  text-align:center;
+}
+
+.passform input{
+  background-color:#cde3e3;
+}
+.passform input::placeholder{
+  color:white;
+  text-align:center;
+}
+
+.passform{
+  padding:10px;
+}
+
+.loginimages{
+  height:2em;
+  postion:absolute;
+  transform:translateY(25%)
+}
+
+.loginsubmit{
+  padding-top:50px;
+}
+
+.loginsubmit input{
+  background-color:white;
+  color:#006fb7;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+@media only screen and (max-width: 600px){
+.logo{
+  height:8em;
+}
+
+.userform input{
+  font-size:16px;
+}
+
+.passform input{
+  font-size:16px;
+}
+
+body{
+  display:block;
+  margin:auto;
+  width: 70%;
+  text-align:center;
+  transform:translateY(30%)
+}
+.loginimages{
+  height:3em;
+  transform:translateY(40%);
+}
+
+.loginsubmit input{
+  padding:10px 20px 10px 20px;
+  font-size:20px;
+  font-weight:bold;
+  font-family:Kefa;
+}
+
+}
+@media only screen and (max-width: 430px){
+body{
+  display:block;
+  margin:auto;
+  width: 90%;
+  text-align:center;
+  transform:translateY(30%)
+}
+
+}
