@@ -150,11 +150,14 @@ body{
   transform:translateY(30%);
 }
 .userform input{
-  font-size:10px;
+  font-size:8px;
 }
 
 .passform input{
-  font-size:10px;
+  font-size:8px;
+}
+.loginimages{
+  height:1.5em;
 }
 
 }
@@ -171,11 +174,12 @@ body{
   transform:translateY(30%);
 }
 .userform input{
-  font-size:8px;
+  font-size:6px;
+
 }
 
 .passform input{
-  font-size:8px;
+  font-size:6px;
 }
 
 }
