@@ -10,6 +10,13 @@
 html {
     height: 100%;
 }
+
+.errorlogin{
+  border:solid 1px orange;
+  color:white;
+  margin:10px;
+}
+
 body{
   background-image: linear-gradient(#006fb7, #8ec33c);
   height: 100%;
@@ -19,7 +26,7 @@ body{
 }
 
 .logo{
-  height:7em;
+  height:9em;
 }
 body{
   display:block;
@@ -57,9 +64,9 @@ input{
 }
 
 .loginimages{
-  height:2em;
+  height:3em;
   postion:absolute;
-  transform:translateY(25%)
+  transform:translateY(45%)
 }
 
 .loginsubmit{
@@ -71,25 +78,33 @@ input{
   color:#006fb7;
   cursor:pointer;
   font-weight:bold;
+  font-family:Kefa;
+  padding:10px 20px 10px 20px;
+  font-size:20px;
 }
 
 @media only screen and (max-width: 600px){
+.errorlogin{
+  margin:10px;
+  font-size:12px;
+}
+
 .logo{
   height:8em;
 }
 
 .userform input{
-  font-size:16px;
+  font-size:14px;
 }
 
 .passform input{
-  font-size:16px;
+  font-size:14px;
 }
 
 body{
   display:block;
   margin:auto;
-  width: 70%;
+  width: 60%;
   text-align:center;
   transform:translateY(30%)
 }
@@ -106,6 +121,14 @@ body{
 }
 
 }
+@media only screen and (max-width: 450px){
+.errorlogin{
+  font-size:10px;
+  margin:5px;
+}
+}
+
+
 @media only screen and (max-width: 430px){
 body{
   display:block;
@@ -134,6 +157,11 @@ body{
 
 .passform input{
   font-size:12px;
+}
+
+.errorlogin{
+  font-size:8px;
+  margin:5px;
 }
 
 }
