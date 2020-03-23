@@ -7,6 +7,12 @@
   font-family:Kefa;
 }
 
+.errorlogin{
+  color:white;
+  font-family:"Kefa";
+  border:solid 1px orange;
+}
+
 html {
     height: 100%;
 }
