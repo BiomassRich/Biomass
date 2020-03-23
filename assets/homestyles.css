@@ -19,7 +19,7 @@ body{
 }
 
 .logo{
-  height:7em;
+  height:10em;
 }
 body{
   display:block;
@@ -56,10 +56,18 @@ input{
   padding:10px;
 }
 
+.userform input{
+  font-size:20px;
+}
+
+.passform input{
+  font-size:20px;
+}
+
 .loginimages{
-  height:2em;
+  height:4em;
   postion:absolute;
-  transform:translateY(25%)
+  transform:translateY(45%)
 }
 
 .loginsubmit{
@@ -70,8 +78,46 @@ input{
   background-color:white;
   color:#006fb7;
   cursor:pointer;
+  padding:20px 30px 20px 30px;
+  font-size:25px;
   font-weight:bold;
+  font-family:Kefa;
 }
+@media only screen and (max-width: 800px){
+.logo{
+  height:10em;
+}
+
+.userform input{
+  font-size:16px;
+}
+
+.passform input{
+  font-size:16px;
+}
+
+body{
+  display:block;
+  margin:auto;
+  width: 100%;
+  text-align:center;
+  transform:translateY(30%)
+}
+.loginimages{
+  height:3em;
+  transform:translateY(40%);
+}
+
+.loginsubmit input{
+  padding:10px 20px 10px 20px;
+  font-size:20px;
+  font-weight:bold;
+  font-family:Kefa;
+}
+
+}
+
+
 
 @media only screen and (max-width: 600px){
 .logo{
@@ -112,11 +158,16 @@ html{
 }
 body{
   display:block;
-  margin:-4%;
+  margin-left:0;
+  margin-right:0;
+  overflow:hidden;
   width: 100%;
   text-align:center;
   transform:translateY(30%)
 }
+
+
+
 
 }
 
