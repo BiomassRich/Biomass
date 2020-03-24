@@ -10,13 +10,14 @@
   </head>
   <body>
     <div class="head">
-      <a href="{% url 'home' %}" ><img src="{% static 'bb.png' %}" class="logo" alt="Biomass-Logo" ></img></a>
+      <a href="{% url 'home' %}" ><img src="{% static 'Biomass.png' %}" class="logo" alt="Biomass-Logo" ></img></a>
     <nav class="navigation">
       <ul>
         {% if user.is_authenticated %}
         <li>
           <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
             {% csrf_token %}
+            <img class="loginimages" src="{%static 'User.png'%}" alt="user-img">
             Hello {{user}} <button type="submit"> Log Out </button>
           </form>
         </li>
