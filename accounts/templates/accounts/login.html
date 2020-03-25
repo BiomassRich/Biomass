@@ -1,10 +1,11 @@
 {% load static from staticfiles %}
 <head>
   <link rel="stylesheet" href="{% static 'homestyles.css'%}">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <meta charset="utf-8">
 </head>
 <body>
+<div class="center-body">
 <img src="{% static 'Biomass.png'%}" class='logo' alt="Biomass-logo">
 <form class="site-form" action="{% url 'accounts:login'%}" method="post">
   {% csrf_token %}
@@ -38,4 +39,5 @@
   <input type="submit" id="login" value="Log In">
   </div>
 </form>
+</div>
 </body>

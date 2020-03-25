@@ -7,6 +7,12 @@
   font-family:Kefa;
 }
 
+.errorlogin{
+  color:white;
+  font-family:"Kefa";
+  border:solid 1px orange;
+}
+
 html {
     height: 100%;
 }
@@ -19,7 +25,7 @@ body{
 }
 
 .logo{
-  height:7em;
+  height:10em;
 }
 body{
   display:block;
@@ -56,10 +62,18 @@ input{
   padding:10px;
 }
 
+.userform input{
+  font-size:20px;
+}
+
+.passform input{
+  font-size:20px;
+}
+
 .loginimages{
-  height:2em;
+  height:4em;
   postion:absolute;
-  transform:translateY(25%)
+  transform:translateY(45%)
 }
 
 .loginsubmit{
@@ -70,8 +84,46 @@ input{
   background-color:white;
   color:#006fb7;
   cursor:pointer;
+  padding:20px 30px 20px 30px;
+  font-size:25px;
   font-weight:bold;
+  font-family:Kefa;
 }
+@media only screen and (max-width: 800px){
+.logo{
+  height:10em;
+}
+
+.userform input{
+  font-size:16px;
+}
+
+.passform input{
+  font-size:16px;
+}
+
+body{
+  display:block;
+  margin:auto;
+  width: 100%;
+  text-align:center;
+  transform:translateY(30%)
+}
+.loginimages{
+  height:3em;
+  transform:translateY(40%);
+}
+
+.loginsubmit input{
+  padding:10px 20px 10px 20px;
+  font-size:20px;
+  font-weight:bold;
+  font-family:Kefa;
+}
+
+}
+
+
 
 @media only screen and (max-width: 600px){
 .logo{
@@ -89,7 +141,7 @@ input{
 body{
   display:block;
   margin:auto;
-  width: 70%;
+  width: 100%;
   text-align:center;
   transform:translateY(30%)
 }
@@ -107,23 +159,32 @@ body{
 
 }
 @media only screen and (max-width: 430px){
+html{
+  height:75%;
+}
 body{
   display:block;
-  margin:auto;
-  width: 90%;
+  margin-left:0;
+  margin-right:0;
+  overflow:hidden;
+  width: 100%;
   text-align:center;
   transform:translateY(30%)
 }
 
+
+
+
 }
 
 @media only screen and (max-width: 350px){
+
 .logo{
-  height:5em;
+  height:6em;
 }
 body{
   display:block;
-  margin:auto;
+  margin:-5%;
   width: 100%;
   text-align:center;
   transform:translateY(30%);
@@ -138,13 +199,13 @@ body{
 
 }
 
-@media only screen and (max-width: 250px){
+@media only screen and (max-width: 255px){
 .logo{
-  height:4em;
+  height:5em;
 }
 body{
   display:block;
-  margin:auto;
+  margin:-5%;
   width: 100%;
   text-align:center;
   transform:translateY(30%);
