@@ -3,11 +3,20 @@
 {% block content %}
 <div class="Fuel-Deliver">
 <h1>Fuel Delivery Log</h1>
-<span>
-<a class="link-button" href="{% url 'fuelrecords:fuelrecord'%}">Fuel Delivery Log</a>
-<a class="link-button" href="{% url 'fuelrecords:viewfuelrecord'%}">View Fuel Delivery Log</a>
-</span>
+  <div class="fuel-barmenu" onclick="menuButton(this)">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+<div id="fuelModal" class="modal">
+<div class="modal-content">
+  <h3>Fuel Delivery Log</h3>
+  <a class="link-button" href="{% url 'fuelrecords:fuelrecord'%}">Add Fuel Delivery Log</a>
+  <a class="link-button" href="{% url 'fuelrecords:viewfuelrecord'%}">View Fuel Delivery Log Entries</a>
 </div>
+</div>
+</div>
+</div>
+<hr>
   <span><h1>Systems</h1></span>
   <div class="systems-list">
     <div class="container" onclick="menuButton1(this)">
@@ -19,9 +28,10 @@
         <div id="system1Modal" class="modal">
           <!-- Modal content -->
           <div class="modal-content">
-            <a class="link-button" href="{% url 'systems:fuellogsystemone'%}">Fuel Log</a>
-            <a class="link-button" href="{% url 'systems:monthlysystemone'%}">Monthly Meter</a>
-      
+            <a href="{% url 'systems:systemone' %}">System One</a>
+            <a class="link-button" href="{% url 'systems:fuellogsystemone'%}">Add Fuel Log</a>
+            <a class="link-button" href="{% url 'systems:monthlysystemone'%}">Add Monthly Meter</a>
+
           </div>
         </div>
       </div>
@@ -36,15 +46,16 @@
         <div id="system2Modal" class="modal">
           <!-- Modal content -->
           <div class="modal-content">
-            <a class="link-button" href="{% url 'systems:fuellogsystemtwo'%}">Fuel Log</a>
-            <a class="link-button" href="{% url 'systems:monthlysystemtwo'%}">Monthly Meter</a>
+            <a href="{% url 'systems:systemtwo' %}">System Two</a>
+            <a class="link-button" href="{% url 'systems:fuellogsystemtwo'%}">Add Fuel Log</a>
+            <a class="link-button" href="{% url 'systems:monthlysystemtwo'%}">Add Monthly Meter</a>
 
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container" onclick="menuButtons(this)">
+    <div class="container" onclick="menuButton3(this)">
       <h3 class="system-button">System Three</h3>
       <div class="barmenu">
         <div class="bar1"></div>
@@ -53,15 +64,16 @@
         <div id="system3Modal" class="modal">
           <!-- Modal content -->
           <div class="modal-content">
-            <a class="link-button" href="{% url 'systems:fuellogsystemthree'%}">Fuel Log</a>
-            <a class="link-button" href="{% url 'systems:monthlysystemthree'%}">Monthly Meter</a>
+            <a href="{% url 'systems:systemthree' %}">System Three</a>
+            <a class="link-button" href="{% url 'systems:fuellogsystemthree'%}">Add Fuel Log</a>
+            <a class="link-button" href="{% url 'systems:monthlysystemthree'%}">Add Monthly Meter</a>
 
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container" onclick="menuButtons(this)">
+    <div class="container" onclick="menuButton4(this)">
       <h3 class="system-button">System Four</h3>
       <div class="barmenu">
         <div class="bar1"></div>
@@ -70,15 +82,16 @@
         <div id="system4Modal" class="modal">
           <!-- Modal content -->
           <div class="modal-content">
-            <a class="link-button" href="{% url 'systems:fuellogsystemfour'%}">Fuel Log</a>
-            <a class="link-button" href="{% url 'systems:monthlysystemfour'%}">Monthly Meter</a>
+            <a href="{% url 'systems:systemfour' %}">System Four</a>
+            <a class="link-button" href="{% url 'systems:fuellogsystemfour'%}">Add Fuel Log</a>
+            <a class="link-button" href="{% url 'systems:monthlysystemfour'%}">Add Monthly Meter</a>
 
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container" onclick="menuButtons(this)">
+    <div class="container" onclick="menuButton5(this)">
       <h3 class="system-button">System Five</h3>
       <div class="barmenu">
         <div class="bar1"></div>
@@ -87,15 +100,16 @@
         <div id="system5Modal" class="modal">
           <!-- Modal content -->
           <div class="modal-content">
-            <a class="link-button" href="{% url 'systems:fuellogsystemfive'%}">Fuel Log</a>
-            <a class="link-button" href="{% url 'systems:monthlysystemfive'%}">Monthly Meter</a>
+            <a href="{% url 'systems:systemfive' %}">System Five</a>
+            <a class="link-button" href="{% url 'systems:fuellogsystemfive'%}">Add Fuel Log</a>
+            <a class="link-button" href="{% url 'systems:monthlysystemfive'%}">Add Monthly Meter</a>
 
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container" onclick="menuButtons(this)">
+    <div class="container" onclick="menuButton6(this)">
       <h3 class="system-button">System Six</h3>
       <div class="barmenu">
         <div class="bar1"></div>
@@ -104,15 +118,16 @@
         <div id="system6Modal" class="modal">
           <!-- Modal content -->
           <div class="modal-content">
-            <a class="link-button" href="{% url 'systems:fuellogsystemsix'%}">Fuel Log</a>
-            <a class="link-button" href="{% url 'systems:monthlysystemsix'%}">Monthly Meter</a>
+            <a href="{% url 'systems:systemsix' %}">System Six</a>
+            <a class="link-button" href="{% url 'systems:fuellogsystemsix'%}">Add Fuel Log</a>
+            <a class="link-button" href="{% url 'systems:monthlysystemsix'%}">Add Monthly Meter</a>
 
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container" onclick="menuButtons(this)">
+    <div class="container" onclick="menuButton7(this)">
       <h3 class="system-button">System Seven</h3>
       <div class="barmenu">
         <div class="bar1"></div>
@@ -121,15 +136,16 @@
         <div id="system7Modal" class="modal">
           <!-- Modal content -->
           <div class="modal-content">
-            <a class="link-button" href="{% url 'systems:fuellogsystemseven'%}">Fuel Log</a>
-            <a class="link-button" href="{% url 'systems:monthlysystemseven'%}">Monthly Meter</a>
+            <a href="{% url 'systems:systemseven' %}">System Seven</a>
+            <a class="link-button" href="{% url 'systems:fuellogsystemseven'%}">Add Fuel Log</a>
+            <a class="link-button" href="{% url 'systems:monthlysystemseven'%}">Add Monthly Meter</a>
 
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container" onclick="menuButtons(this)">
+    <div class="container" onclick="menuButton8(this)">
       <h3 class="system-button">System Eight</h3>
       <div class="barmenu">
         <div class="bar1"></div>
@@ -138,15 +154,16 @@
         <div id="system8Modal" class="modal">
           <!-- Modal content -->
           <div class="modal-content">
-            <a class="link-button" href="{% url 'systems:fuellogsystemeight'%}">Fuel Log</a>
-            <a class="link-button" href="{% url 'systems:monthlysystemeight'%}">Monthly Meter</a>
+            <a href="{% url 'systems:systemeight' %}">System Eight</a>
+            <a class="link-button" href="{% url 'systems:fuellogsystemeight'%}">Add Fuel Log</a>
+            <a class="link-button" href="{% url 'systems:monthlysystemeight'%}">Add Monthly Meter</a>
 
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container" onclick="menuButtons(this)">
+    <div class="container" onclick="menuButton9(this)">
       <h3 class="system-button">System Nine</h3>
       <div class="barmenu">
         <div class="bar1"></div>
@@ -155,15 +172,16 @@
         <div id="system9Modal" class="modal">
           <!-- Modal content -->
           <div class="modal-content">
-            <a class="link-button" href="{% url 'systems:fuellogsystemnine'%}">Fuel Log</a>
-            <a class="link-button" href="{% url 'systems:monthlysystemnine'%}">Monthly Meter</a>
+            <a href="{% url 'systems:systemnine' %}">System Nine</a>
+            <a class="link-button" href="{% url 'systems:fuellogsystemnine'%}">Add Fuel Log</a>
+            <a class="link-button" href="{% url 'systems:monthlysystemnine'%}">Add Monthly Meter</a>
 
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container" onclick="menuButtons(this)">
+    <div class="container" onclick="menuButton10(this)">
       <h3 class="system-button">System Ten</h3>
       <div class="barmenu">
         <div class="bar1"></div>
@@ -172,17 +190,33 @@
         <div id="system10Modal" class="modal">
           <!-- Modal content -->
           <div class="modal-content">
-            <a class="link-button" href="{% url 'systems:fuellogsystemten'%}">Fuel Log</a>
-            <a class="link-button" href="{% url 'systems:monthlysystemten'%}">Monthly Meter</a>
+            <a href="{% url 'systems:systemten' %}">System Ten</a>
+            <a class="link-button" href="{% url 'systems:fuellogsystemten'%}">Add Fuel Log</a>
+            <a class="link-button" href="{% url 'systems:monthlysystemten'%}">Add Monthly Meter</a>
           </div>
         </div>
       </div>
     </div>
+
   </div>
+  <hr>
   <script>
+    var fuel = document.getElementById("fuelModal");
     var modal1 = document.getElementById("system1Modal");
     var modal2 = document.getElementById("system2Modal");
+    var modal3 = document.getElementById("system3Modal");
+    var modal4 = document.getElementById("system4Modal");
+    var modal5 = document.getElementById("system5Modal");
+    var modal6 = document.getElementById("system6Modal");
+    var modal7 = document.getElementById("system7Modal");
+    var modal8 = document.getElementById("system8Modal");
+    var modal9 = document.getElementById("system9Modal");
+    var modal10 = document.getElementById("system10Modal");
 
+  function menuButton(x) {
+    fuel.style.display = "block";
+    menuToggle(x);
+  }
 
   function menuButton1(x) {
     modal1.style.display = "block";
@@ -191,6 +225,46 @@
 
   function menuButton2(x) {
     modal2.style.display = "block";
+    menuToggle(x);
+  }
+
+  function menuButton3(x) {
+    modal3.style.display = "block";
+    menuToggle(x);
+  }
+
+  function menuButton4(x) {
+    modal4.style.display = "block";
+    menuToggle(x);
+  }
+
+  function menuButton5(x) {
+    modal5.style.display = "block";
+    menuToggle(x);
+  }
+
+  function menuButton6(x) {
+    modal6.style.display = "block";
+    menuToggle(x);
+  }
+
+  function menuButton7(x) {
+    modal7.style.display = "block";
+    menuToggle(x);
+  }
+
+  function menuButton8(x) {
+    modal8.style.display = "block";
+    menuToggle(x);
+  }
+
+  function menuButton9(x) {
+    modal9.style.display = "block";
+    menuToggle(x);
+  }
+
+  function menuButton10(x) {
+    modal10.style.display = "block";
     menuToggle(x);
   }
 
@@ -203,11 +277,38 @@
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
     switch (event.target) {
+      case fuel:
+        fuel.style.display = "none";
+        break
       case modal1:
         modal1.style.display = "none";
         break;
       case modal2:
         modal2.style.display = "none";
+        break;
+      case modal3:
+        modal3.style.display = "none";
+        break;
+      case modal4:
+        modal4.style.display = "none";
+        break;
+      case modal5:
+        modal5.style.display = "none";
+        break;
+      case modal6:
+        modal6.style.display = "none";
+        break;
+      case modal7:
+        modal7.style.display = "none";
+        break;
+      case modal8:
+        modal8.style.display = "none";
+        break;
+      case modal9:
+        modal9.style.display = "none";
+        break;
+      case modal10:
+        modal10.style.display = "none";
         break;
     }
   }
