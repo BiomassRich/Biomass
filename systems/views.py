@@ -10,9 +10,99 @@ def idfuelLogSystemOne(request,id):
     return render(request,'systems/idfuellogsystemone.html',{'id':id})
 
 @login_required(login_url="/accounts/login/")
+def idfuelLogSystemTwo(request,id):
+    id = FuelLogSystemTwoMod.objects.get(id=id)
+    return render(request,'systems/idfuellogsystemtwo.html',{'id':id})
+
+@login_required(login_url="/accounts/login/")
+def idfuelLogSystemThree(request,id):
+    id = FuelLogSystemThreeMod.objects.get(id=id)
+    return render(request,'systems/idfuellogsystemthree.html',{'id':id})
+
+@login_required(login_url="/accounts/login/")
+def idfuelLogSystemFour(request,id):
+    id = FuelLogSystemFourMod.objects.get(id=id)
+    return render(request,'systems/idfuellogsystemfour.html',{'id':id})
+
+@login_required(login_url="/accounts/login/")
+def idfuelLogSystemFive(request,id):
+    id = FuelLogSystemFiveMod.objects.get(id=id)
+    return render(request,'systems/idfuellogsystemfive.html',{'id':id})
+
+@login_required(login_url="/accounts/login/")
+def idfuelLogSystemSix(request,id):
+    id = FuelLogSystemSixMod.objects.get(id=id)
+    return render(request,'systems/idfuellogsystemsix.html',{'id':id})
+
+@login_required(login_url="/accounts/login/")
+def idfuelLogSystemSeven(request,id):
+    id = FuelLogSystemSevenMod.objects.get(id=id)
+    return render(request,'systems/idfuellogsystemseven.html',{'id':id})
+
+@login_required(login_url="/accounts/login/")
+def idfuelLogSystemEight(request,id):
+    id = FuelLogSystemEightMod.objects.get(id=id)
+    return render(request,'systems/idfuellogsystemeight.html',{'id':id})
+
+@login_required(login_url="/accounts/login/")
+def idfuelLogSystemNine(request,id):
+    id = FuelLogSystemNineMod.objects.get(id=id)
+    return render(request,'systems/idfuellogsystemnine.html',{'id':id})
+
+@login_required(login_url="/accounts/login/")
+def idfuelLogSystemTen(request,id):
+    id = FuelLogSystemTenMod.objects.get(id=id)
+    return render(request,'systems/idfuellogsystemten.html',{'id':id})
+
+@login_required(login_url="/accounts/login/")
 def idmonthlySystemOne(request,id):
     id = monthlyMeterSystemOneMod.objects.get(id=id)
     return render(request,'systems/idmonthlysystemone.html',{'id':id})
+
+@login_required(login_url="/accounts/login/")
+def idmonthlySystemTwo(request,id):
+    id = monthlyMeterSystemTwoMod.objects.get(id=id)
+    return render(request,'systems/idmonthlysystemtwo.html',{'id':id})
+
+@login_required(login_url="/accounts/login/")
+def idmonthlySystemThree(request,id):
+    id = monthlyMeterSystemThreeMod.objects.get(id=id)
+    return render(request,'systems/idmonthlysystemthree.html',{'id':id})
+
+@login_required(login_url="/accounts/login/")
+def idmonthlySystemFour(request,id):
+    id = monthlyMeterSystemFourMod.objects.get(id=id)
+    return render(request,'systems/idmonthlysystemfour.html',{'id':id})
+
+@login_required(login_url="/accounts/login/")
+def idmonthlySystemFive(request,id):
+    id = monthlyMeterSystemFiveMod.objects.get(id=id)
+    return render(request,'systems/idmonthlysystemfive.html',{'id':id})
+
+@login_required(login_url="/accounts/login/")
+def idmonthlySystemSix(request,id):
+    id = monthlyMeterSystemSixMod.objects.get(id=id)
+    return render(request,'systems/idmonthlysystemsix.html',{'id':id})
+
+@login_required(login_url="/accounts/login/")
+def idmonthlySystemSeven(request,id):
+    id = monthlyMeterSystemSevenMod.objects.get(id=id)
+    return render(request,'systems/idmonthlysystemseven.html',{'id':id})
+
+@login_required(login_url="/accounts/login/")
+def idmonthlySystemEight(request,id):
+    id = monthlyMeterSystemEightMod.objects.get(id=id)
+    return render(request,'systems/idmonthlysystemeight.html',{'id':id})
+
+@login_required(login_url="/accounts/login/")
+def idmonthlySystemNine(request,id):
+    id = monthlyMeterSystemNineMod.objects.get(id=id)
+    return render(request,'systems/idmonthlysystemnine.html',{'id':id})
+
+@login_required(login_url="/accounts/login/")
+def idmonthlySystemTen(request,id):
+    id = monthlyMeterSystemTenMod.objects.get(id=id)
+    return render(request,'systems/idmonthlysystemten.html',{'id':id})
 
 @login_required(login_url="/accounts/login/")
 def systemOne(request):

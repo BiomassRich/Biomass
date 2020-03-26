@@ -16,7 +16,7 @@
     <tbody>
   {% for entryMonth in entriesMonth %}
   <tr>
-      <td>{{entryMonth.id}}</td>
+      <td><a href="{% url 'systems:idmonthlysystemnine' id=entryMonth.id%}">{{entryMonth.id}}</a></td>
       <td>{{entryMonth.system}}</td>
       <td>{{entryMonth.serial_number}}</td>
       <td>{{entryMonth.current_meter_reading}}</td>
@@ -43,7 +43,7 @@
     <tbody>
   {% for entryFuel in entriesFuel %}
   <tr>
-      <td>{{entryFuel.id}}</td>
+      <td><a href="{% url 'systems:idfuellogsystemnine' id=entryFuel.id%}">{{entryFuel.id}}</a></td>
       <td>{{entryFuel.buckets_added}}</td>
       <td>{{entryFuel.date}}</td>
       <td>{{entryFuel.day}}</td>

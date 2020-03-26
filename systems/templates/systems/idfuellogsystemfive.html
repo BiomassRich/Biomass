@@ -1,0 +1,17 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+<div class="record-view">
+  <h2>ID: {{id.id}}</h2>
+  <p>Buckets Added: {{id.buckets_added}}</p>
+  <p>Date Added: {{id.date}}</p>
+  <p>Staff: {{id.staff}}</p>
+  {% if id.thumb %}
+    <img src="{{id.thumb.url}}"></img>
+  {% else %}
+    <p>No image uploaded</p>
+  {% endif %}
+</div>
+<div>
+<a class="back-button" href="javascript:history.back()">Back</a>
+</div>
+{% endblock %}

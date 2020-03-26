@@ -19,13 +19,12 @@
     let massPopChart = new Chart(myChart, {
       type:'bar',
       data:{
-        labels:[{%for entryFuel in entriesFuel %}{%if entryFuel.day|date:"dmY" >= fromdate and entryFuel.day|date:"dmY" <= todate %}"{{entryFuel.day}}",
-        {% endif %}
+        labels:[{%for entryFuel in entriesFuel %}"{{entryFuel.day}}",
         {% endfor%}],
         datasets:[{
           label:'Buckets Added',
-          data: [{%for entryFuel in entriesFuel %}{%if entryFuel.day|date:"dmy" >= fromdate and entryFuel.day|date:"dmY" <= todate %} "{{entryFuel.buckets_added}}",
-          {% endif %}
+          data: [{%for entryFuel in entriesFuel %}"{{entryFuel.buckets_added}}",
+
           {% endfor %},
           ],
           backgroundColor:'green',

@@ -1,0 +1,78 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+  <form class="site-form" action="{%url 'reports:sevenfuellogreport'%}" method="post">
+      {% csrf_token %}
+      {{form}}
+    <input type="submit" value="Create Report">
+  </form>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js">
+
+  </script>
+  {% if request.method == 'POST'%}
+  <div class="charts">
+    <canvas id="myChart"></canvas>
+
+  </div>
+  <script type="text/javascript">
+    let myChart = document.getElementById('myChart').getContext('2d');
+
+    let massPopChart = new Chart(myChart, {
+      type:'bar',
+      data:{
+        labels:[{%for entryFuel in entriesFuel %}"{{entryFuel.day}}",
+        {% endfor%}],
+        datasets:[{
+          label:'Buckets Added',
+          data: [{%for entryFuel in entriesFuel %}"{{entryFuel.buckets_added}}",
+
+          {% endfor %},
+          ],
+          backgroundColor:'green',
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }],
+      },
+      options:{
+        scales:{
+          yAxes:[{
+            ticks:{
+              beginAtZero:true
+            }
+          }]
+        },
+        responsive:true,
+        title:{
+          display:true,
+          text:'System Seven Buckets Added',
+          fontSize:25,
+        },
+
+      },
+    });
+  </script>
+{% endif %}
+<div class="fuelLog">
+  <h1>System Seven Fuel Log Entries</h1>
+  <table>
+    <thead>
+    <th>ID</th>
+    <th>Buckets Added</th>
+    <th>Date</th>
+    <th>Day</th>
+    <th>Staff</th>
+    </thead>
+    <tbody>
+  {% for entryFuel in entriesFuel %}
+  <tr>
+      <td><a href="{% url 'systems:idfuellogsystemseven' id=entryFuel.id%}">{{entryFuel.id}}</a></td>
+      <td>{{entryFuel.buckets_added}}</td>
+      <td>{{entryFuel.date}}</td>
+      <td>{{entryFuel.day}}</td>
+      <td>{{entryFuel.staff}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+</div>
+{% endblock %}

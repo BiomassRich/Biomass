@@ -1,0 +1,86 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+<form class="site-form" action="{%url 'reports:eightmonthlyreport'%}" method="post">
+    {% csrf_token %}
+    {{form}}
+  <input type="submit" value="Create Report">
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js">
+
+</script>
+{% if request.method == 'POST'%}
+<div class="charts">
+  <canvas id="myChart"></canvas>
+
+</div>
+<script type="text/javascript">
+  let myChart = document.getElementById('myChart').getContext('2d');
+
+  let massPopChart = new Chart(myChart, {
+    type:'bar',
+    data:{
+      labels:[{%for entryMonth in entriesMonth %}"{{entryMonth.day}}",
+      {% endfor%}],
+      datasets:[{
+        label:'Difference',
+        data: [{%for entryMonth in entriesMonth %}"{{entryMonth.difference}}",
+
+        {% endfor %},
+        ],
+        backgroundColor:'green',
+        borderWidth:1,
+        borderColor:'#777',
+        hoverBorderWidth:3,
+        hoverBorderColor:'#000'
+      }],
+    },
+    options:{
+      scales:{
+        yAxes:[{
+          ticks:{
+            beginAtZero:true
+          }
+        }]
+      },
+      responsive:true,
+      title:{
+        display:true,
+        text:'System Eight Difference',
+        fontSize:25,
+      },
+
+    },
+  });
+</script>
+{% endif %}
+<div class="monthly">
+  <h1>System Eight Monthly Meter Entries</h1>
+  <table>
+    <thead>
+    <th>ID</th>
+    <th>System</th>
+    <th>Serial Number</th>
+    <th>Current Meter Reading</th>
+    <th>Previous Meter Reading</th>
+    <th>Difference</th>
+    <th>Date</th>
+    <th>Staff</th>
+    </thead>
+    <tbody>
+  {% for entryMonth in entriesMonth %}
+  <tr>
+      <td><a href="{% url 'systems:idmonthlysystemeight' id=entryMonth.id%}">{{entryMonth.id}}</a></td>
+      <td>{{entryMonth.system}}</td>
+      <td>{{entryMonth.serial_number}}</td>
+      <td>{{entryMonth.current_meter_reading}}</td>
+      <td>{{entryMonth.previous_meter_reading}}</td>
+      <td>{{entryMonth.difference}}</td>
+      <td>{{entryMonth.date}}</td>
+      <td>{{entryMonth.staff}}</td>
+      </tr>
+    {% endfor %}
+      </tbody>
+    </table>
+</div>
+
+{% endblock %}
