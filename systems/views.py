@@ -442,7 +442,7 @@ def fuelLogSystemOne(request):
 def fuelLogSystemTwo(request):
     entries = FuelLogSystemTwoMod.objects.all().order_by('date')
     if request.method == 'POST':
-        form = forms.AddFuelLogTwoForm(request.POST)
+        form = forms.AddFuelLogTwoForm(request.POST, request.FILES)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.staff = request.user
@@ -456,7 +456,7 @@ def fuelLogSystemTwo(request):
 def fuelLogSystemThree(request):
     entries = FuelLogSystemThreeMod.objects.all().order_by('date')
     if request.method == 'POST':
-        form = forms.AddFuelLogThreeForm(request.POST)
+        form = forms.AddFuelLogThreeForm(request.POST, request.FILES)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.staff = request.user
@@ -470,7 +470,7 @@ def fuelLogSystemThree(request):
 def fuelLogSystemFour(request):
     entries = FuelLogSystemFourMod.objects.all().order_by('date')
     if request.method == 'POST':
-        form = forms.AddFuelLogFourForm(request.POST)
+        form = forms.AddFuelLogFourForm(request.POST, request.FILES)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.staff = request.user
@@ -484,7 +484,7 @@ def fuelLogSystemFour(request):
 def fuelLogSystemFive(request):
     entries = FuelLogSystemFiveMod.objects.all().order_by('date')
     if request.method == 'POST':
-        form = forms.AddFuelLogFiveForm(request.POST)
+        form = forms.AddFuelLogFiveForm(request.POST, request.FILES)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.staff = request.user
@@ -498,7 +498,7 @@ def fuelLogSystemFive(request):
 def fuelLogSystemSix(request):
     entries = FuelLogSystemSixMod.objects.all().order_by('date')
     if request.method == 'POST':
-        form = forms.AddFuelLogSixForm(request.POST)
+        form = forms.AddFuelLogSixForm(request.POST, request.FILES)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.staff = request.user
@@ -512,7 +512,7 @@ def fuelLogSystemSix(request):
 def fuelLogSystemSeven(request):
     entries = FuelLogSystemSevenMod.objects.all().order_by('date')
     if request.method == 'POST':
-        form = forms.AddFuelLogSevenForm(request.POST)
+        form = forms.AddFuelLogSevenForm(request.POST, request.FILES)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.staff = request.user
@@ -526,7 +526,7 @@ def fuelLogSystemSeven(request):
 def fuelLogSystemEight(request):
     entries = FuelLogSystemEightMod.objects.all().order_by('date')
     if request.method == 'POST':
-        form = forms.AddFuelLogEightForm(request.POST)
+        form = forms.AddFuelLogEightForm(request.POST, request.FILES)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.staff = request.user
@@ -540,7 +540,7 @@ def fuelLogSystemEight(request):
 def fuelLogSystemNine(request):
     entries = FuelLogSystemNineMod.objects.all().order_by('date')
     if request.method == 'POST':
-        form = forms.AddFuelLogNineForm(request.POST)
+        form = forms.AddFuelLogNineForm(request.POST, request.FILES)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.staff = request.user
@@ -554,7 +554,7 @@ def fuelLogSystemNine(request):
 def fuelLogSystemTen(request):
     entries = FuelLogSystemTenMod.objects.all().order_by('date')
     if request.method == 'POST':
-        form = forms.AddFuelLogTenForm(request.POST)
+        form = forms.AddFuelLogTenForm(request.POST, request.FILES)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.staff = request.user

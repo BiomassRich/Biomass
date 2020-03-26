@@ -34,17 +34,21 @@ hr{
 .record-view{
   display:block;
   padding:50px;
+  border:1px solid black;
+  margin:50px;
 }
 
 .record-view h2{
-  background-color: #4CAF50;
-  border: solid 5px rgba(255,255,255,0.5);
-  color:white;
+  background-color: white;
+  border: solid 2px rgba(0,0,0,1);
+  color:black;
+  font-family:"Kefa";
 }
 
 .record-view p{
   display:table;
-  background-color:white;
+  font-family:"Kefa";
+  color:white;
 }
 
 .record-view img{

@@ -2,7 +2,7 @@
 {% block content %}
 <div class="wrapper">
   <h1>Fuel Log System Two</h1>
-  <form class="site-form" action="{%url 'systems:fuellogsystemtwo'%}" method="post">
+  <form class="site-form" action="{%url 'systems:fuellogsystemtwo'%}" method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {{form}}
     <input type="submit" value="Add Entry">

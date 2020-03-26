@@ -32,6 +32,7 @@ class FuelLogSystemTwoMod(models.Model):
     date = models.DateTimeField(auto_now_add = True)
     day = models.DateField(auto_now_add = True)
     staff = models.ForeignKey(User,on_delete=models.CASCADE)
+    thumb = models.ImageField(blank=True,null=True)
 
     def __str__(self):
         return str(self.id) + " " + str(self.day) + " "  + str(self.staff)
@@ -55,6 +56,7 @@ class FuelLogSystemThreeMod(models.Model):
     date = models.DateTimeField(auto_now_add = True)
     day = models.DateField(auto_now_add = True)
     staff = models.ForeignKey(User,on_delete=models.CASCADE)
+    thumb = models.ImageField(blank=True,null=True)
 
     def __str__(self):
         return str(self.id) + " " + str(self.day) + " "  + str(self.staff)
@@ -78,6 +80,7 @@ class FuelLogSystemFourMod(models.Model):
     date = models.DateTimeField(auto_now_add = True)
     day = models.DateField(auto_now_add = True)
     staff = models.ForeignKey(User,on_delete=models.CASCADE)
+    thumb = models.ImageField(blank=True,null=True)
 
     def __str__(self):
         return str(self.id) + " " + str(self.day) + " "  + str(self.staff)
@@ -101,6 +104,7 @@ class FuelLogSystemFiveMod(models.Model):
     date = models.DateTimeField(auto_now_add = True)
     day = models.DateField(auto_now_add = True)
     staff = models.ForeignKey(User,on_delete=models.CASCADE)
+    thumb = models.ImageField(blank=True,null=True)
 
     def __str__(self):
         return str(self.id) + " " + str(self.day) + " "  + str(self.staff)
@@ -124,6 +128,7 @@ class FuelLogSystemSixMod(models.Model):
     date = models.DateTimeField(auto_now_add = True)
     day = models.DateField(auto_now_add = True)
     staff = models.ForeignKey(User,on_delete=models.CASCADE)
+    thumb = models.ImageField(blank=True,null=True)
 
     def __str__(self):
         return str(self.id) + " " + str(self.day) + " "  + str(self.staff)
@@ -147,6 +152,7 @@ class FuelLogSystemSevenMod(models.Model):
     date = models.DateTimeField(auto_now_add = True)
     day = models.DateField(auto_now_add = True)
     staff = models.ForeignKey(User,on_delete=models.CASCADE)
+    thumb = models.ImageField(blank=True,null=True)
 
     def __str__(self):
         return str(self.id) + " " + str(self.day) + " "  + str(self.staff)
@@ -171,6 +177,7 @@ class FuelLogSystemEightMod(models.Model):
     date = models.DateTimeField(auto_now_add = True)
     day = models.DateField(auto_now_add = True)
     staff = models.ForeignKey(User,on_delete=models.CASCADE)
+    thumb = models.ImageField(blank=True,null=True)
 
     def __str__(self):
         return str(self.id) + " " + str(self.day) + " "  + str(self.staff)
@@ -195,6 +202,7 @@ class FuelLogSystemNineMod(models.Model):
     date = models.DateTimeField(auto_now_add = True)
     day = models.DateField(auto_now_add = True)
     staff = models.ForeignKey(User,on_delete=models.CASCADE)
+    thumb = models.ImageField(blank=True,null=True)
 
     def __str__(self):
         return str(self.id) + " " + str(self.day) + " "  + str(self.staff)
@@ -218,6 +226,7 @@ class FuelLogSystemTenMod(models.Model):
     date = models.DateTimeField(auto_now_add = True)
     day = models.DateField(auto_now_add = True)
     staff = models.ForeignKey(User,on_delete=models.CASCADE)
+    thumb = models.ImageField(blank=True,null=True)
 
     def __str__(self):
         return str(self.id) + " " + str(self.day) + " "  + str(self.staff)
