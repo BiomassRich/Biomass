@@ -1,0 +1,28 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+<div class="fuelLog">
+  <h1>Products</h1>
+  <table>
+    <thead>
+    <th>ID</th>
+    <th>Product Type</th>
+    <th>Product Size</th>
+    <th>Source/Supplier</th>
+    <th>Entry Date</th>
+    <th>Staff</th>
+    </thead>
+    <tbody>
+
+  {% for productLog in productsLog %}
+  <tr>
+      <td>{{productLog.id}}</td>
+      <td>{{productLog.product_type}}</td>
+      <td>{{productLog.product_size}}</td>>
+      <td>{{productLog.source_supplier}}</td>>
+      <td>{{productLog.entry_date}}</td>
+      <td>{{productLog.staff}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+</div>
+{% endblock %}

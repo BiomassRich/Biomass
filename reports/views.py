@@ -5,6 +5,7 @@ from . import forms
 from systems.models import *
 from datetime import datetime
 
+
 @login_required(login_url="/accounts/login/")
 def systemOneFuelLogReport(request):
     entriesFuel = FuelLogSystemOneMod.objects.all().order_by('date')
@@ -274,16 +275,18 @@ def systemFourMonthlyMeterReport(request):
 @login_required(login_url="/accounts/login/")
 def systemFiveMonthlyMeterReport(request):
     entriesMonth = monthlyMeterSystemFiveMod.objects.all().order_by('date')
-    if form.is_valid():
-        data = request.POST.copy()
-        fromdate = data.get('fromdate')
-        todate = data.get('todate')
-        fromdate = fromdate.replace('/',' ')
-        todate = todate.replace('/',' ')
-        fromdate = datetime.strptime(fromdate,'%d %m %Y')
-        todate = datetime.strptime(todate,'%d %m %Y')
-        entriesMonth = monthlyMeterSystemFiveMod.objects.filter(day__gte=fromdate,day__lte=todate).order_by('date')
-        return render(request,'reports/systemfivemonthlyreport.html',{'form':form,'entriesMonth':entriesMonth})
+    if request.method == 'POST':
+        form = forms.ReportDateForm(request.POST)
+        if form.is_valid():
+            data = request.POST.copy()
+            fromdate = data.get('fromdate')
+            todate = data.get('todate')
+            fromdate = fromdate.replace('/',' ')
+            todate = todate.replace('/',' ')
+            fromdate = datetime.strptime(fromdate,'%d %m %Y')
+            todate = datetime.strptime(todate,'%d %m %Y')
+            entriesMonth = monthlyMeterSystemFiveMod.objects.filter(day__gte=fromdate,day__lte=todate).order_by('date')
+            return render(request,'reports/systemfivemonthlyreport.html',{'form':form,'entriesMonth':entriesMonth})
     else:
         form = forms.ReportDateForm()
     return render(request,'reports/systemfivemonthlyreport.html',{'form':form,'entriesMonth':entriesMonth})
@@ -291,16 +294,18 @@ def systemFiveMonthlyMeterReport(request):
 @login_required(login_url="/accounts/login/")
 def systemSixMonthlyMeterReport(request):
     entriesMonth = monthlyMeterSystemSixMod.objects.all().order_by('date')
-    if form.is_valid():
-        data = request.POST.copy()
-        fromdate = data.get('fromdate')
-        todate = data.get('todate')
-        fromdate = fromdate.replace('/',' ')
-        todate = todate.replace('/',' ')
-        fromdate = datetime.strptime(fromdate,'%d %m %Y')
-        todate = datetime.strptime(todate,'%d %m %Y')
-        entriesMonth = monthlyMeterSystemSixMod.objects.filter(day__gte=fromdate,day__lte=todate).order_by('date')
-        return render(request,'reports/systemsixmonthlyreport.html',{'form':form,'entriesMonth':entriesMonth})
+    if request.method == 'POST':
+        form = forms.ReportDateForm(request.POST)
+        if form.is_valid():
+            data = request.POST.copy()
+            fromdate = data.get('fromdate')
+            todate = data.get('todate')
+            fromdate = fromdate.replace('/',' ')
+            todate = todate.replace('/',' ')
+            fromdate = datetime.strptime(fromdate,'%d %m %Y')
+            todate = datetime.strptime(todate,'%d %m %Y')
+            entriesMonth = monthlyMeterSystemSixMod.objects.filter(day__gte=fromdate,day__lte=todate).order_by('date')
+            return render(request,'reports/systemsixmonthlyreport.html',{'form':form,'entriesMonth':entriesMonth})
     else:
         form = forms.ReportDateForm()
     return render(request,'reports/systemsixmonthlyreport.html',{'form':form,'entriesMonth':entriesMonth})
@@ -308,16 +313,18 @@ def systemSixMonthlyMeterReport(request):
 @login_required(login_url="/accounts/login/")
 def systemSevenMonthlyMeterReport(request):
     entriesMonth = monthlyMeterSystemSevenMod.objects.all().order_by('date')
-    if form.is_valid():
-        data = request.POST.copy()
-        fromdate = data.get('fromdate')
-        todate = data.get('todate')
-        fromdate = fromdate.replace('/',' ')
-        todate = todate.replace('/',' ')
-        fromdate = datetime.strptime(fromdate,'%d %m %Y')
-        todate = datetime.strptime(todate,'%d %m %Y')
-        entriesMonth = monthlyMeterSystemSevenMod.objects.filter(day__gte=fromdate,day__lte=todate).order_by('date')
-        return render(request,'reports/systemsevenmonthlyreport.html',{'form':form,'entriesMonth':entriesMonth})
+    if request.method == 'POST':
+        form = forms.ReportDateForm(request.POST)
+        if form.is_valid():
+            data = request.POST.copy()
+            fromdate = data.get('fromdate')
+            todate = data.get('todate')
+            fromdate = fromdate.replace('/',' ')
+            todate = todate.replace('/',' ')
+            fromdate = datetime.strptime(fromdate,'%d %m %Y')
+            todate = datetime.strptime(todate,'%d %m %Y')
+            entriesMonth = monthlyMeterSystemSevenMod.objects.filter(day__gte=fromdate,day__lte=todate).order_by('date')
+            return render(request,'reports/systemsevenmonthlyreport.html',{'form':form,'entriesMonth':entriesMonth})
     else:
         form = forms.ReportDateForm()
     return render(request,'reports/systemsevenmonthlyreport.html',{'form':form,'entriesMonth':entriesMonth})
@@ -325,16 +332,18 @@ def systemSevenMonthlyMeterReport(request):
 @login_required(login_url="/accounts/login/")
 def systemEightMonthlyMeterReport(request):
     entriesMonth = monthlyMeterSystemEightMod.objects.all().order_by('date')
-    if form.is_valid():
-        data = request.POST.copy()
-        fromdate = data.get('fromdate')
-        todate = data.get('todate')
-        fromdate = fromdate.replace('/',' ')
-        todate = todate.replace('/',' ')
-        fromdate = datetime.strptime(fromdate,'%d %m %Y')
-        todate = datetime.strptime(todate,'%d %m %Y')
-        entriesMonth = monthlyMeterSystemEightMod.objects.filter(day__gte=fromdate,day__lte=todate).order_by('date')
-        return render(request,'reports/systemeightmonthlyreport.html',{'form':form,'entriesMonth':entriesMonth})
+    if request.method == 'POST':
+        form = forms.ReportDateForm(request.POST)
+        if form.is_valid():
+            data = request.POST.copy()
+            fromdate = data.get('fromdate')
+            todate = data.get('todate')
+            fromdate = fromdate.replace('/',' ')
+            todate = todate.replace('/',' ')
+            fromdate = datetime.strptime(fromdate,'%d %m %Y')
+            todate = datetime.strptime(todate,'%d %m %Y')
+            entriesMonth = monthlyMeterSystemEightMod.objects.filter(day__gte=fromdate,day__lte=todate).order_by('date')
+            return render(request,'reports/systemeightmonthlyreport.html',{'form':form,'entriesMonth':entriesMonth})
     else:
         form = forms.ReportDateForm()
     return render(request,'reports/systemeightmonthlyreport.html',{'form':form,'entriesMonth':entriesMonth})
@@ -342,16 +351,18 @@ def systemEightMonthlyMeterReport(request):
 @login_required(login_url="/accounts/login/")
 def systemNineMonthlyMeterReport(request):
     entriesMonth = monthlyMeterSystemNineMod.objects.all().order_by('date')
-    if form.is_valid():
-        data = request.POST.copy()
-        fromdate = data.get('fromdate')
-        todate = data.get('todate')
-        fromdate = fromdate.replace('/',' ')
-        todate = todate.replace('/',' ')
-        fromdate = datetime.strptime(fromdate,'%d %m %Y')
-        todate = datetime.strptime(todate,'%d %m %Y')
-        entriesMonth = monthlyMeterSystemNineMod.objects.filter(day__gte=fromdate,day__lte=todate).order_by('date')
-        return render(request,'reports/systemninemonthlyreport.html',{'form':form,'entriesMonth':entriesMonth})
+    if request.method == 'POST':
+        form = forms.ReportDateForm(request.POST)
+        if form.is_valid():
+            data = request.POST.copy()
+            fromdate = data.get('fromdate')
+            todate = data.get('todate')
+            fromdate = fromdate.replace('/',' ')
+            todate = todate.replace('/',' ')
+            fromdate = datetime.strptime(fromdate,'%d %m %Y')
+            todate = datetime.strptime(todate,'%d %m %Y')
+            entriesMonth = monthlyMeterSystemNineMod.objects.filter(day__gte=fromdate,day__lte=todate).order_by('date')
+            return render(request,'reports/systemninemonthlyreport.html',{'form':form,'entriesMonth':entriesMonth})
     else:
         form = forms.ReportDateForm()
     return render(request,'reports/systemninemonthlyreport.html',{'entriesMonth':entriesMonth})
@@ -359,16 +370,18 @@ def systemNineMonthlyMeterReport(request):
 @login_required(login_url="/accounts/login/")
 def systemTenMonthlyMeterReport(request):
     entriesMonth = monthlyMeterSystemTenMod.objects.all().order_by('date')
-    if form.is_valid():
-        data = request.POST.copy()
-        fromdate = data.get('fromdate')
-        todate = data.get('todate')
-        fromdate = fromdate.replace('/',' ')
-        todate = todate.replace('/',' ')
-        fromdate = datetime.strptime(fromdate,'%d %m %Y')
-        todate = datetime.strptime(todate,'%d %m %Y')
-        entriesMonth = monthlyMeterSystemTenMod.objects.filter(day__gte=fromdate,day__lte=todate).order_by('date')
-        return render(request,'reports/systemtenmonthlyreport.html',{'form':form,'entriesMonth':entriesMonth})
+    if request.method == 'POST':
+        form = forms.ReportDateForm(request.POST)
+        if form.is_valid():
+            data = request.POST.copy()
+            fromdate = data.get('fromdate')
+            todate = data.get('todate')
+            fromdate = fromdate.replace('/',' ')
+            todate = todate.replace('/',' ')
+            fromdate = datetime.strptime(fromdate,'%d %m %Y')
+            todate = datetime.strptime(todate,'%d %m %Y')
+            entriesMonth = monthlyMeterSystemTenMod.objects.filter(day__gte=fromdate,day__lte=todate).order_by('date')
+            return render(request,'reports/systemtenmonthlyreport.html',{'form':form,'entriesMonth':entriesMonth})
     else:
         form = forms.ReportDateForm()
     return render(request,'reports/systemtenmonthlyreport.html',{'form':form,'entriesMonth':entriesMonth})

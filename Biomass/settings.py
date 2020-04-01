@@ -27,7 +27,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['biomass.pythonanywhere.com','127.0.0.1', 'localhost']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,6 +40,7 @@ INSTALLED_APPS = [
     'accounts',
     'fueldelivery',
     'reports',
+    'products',
 ]
 
 MIDDLEWARE = [

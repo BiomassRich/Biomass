@@ -1,0 +1,10 @@
+{% extends 'base_layout.html'%}
+{% load static from staticfiles %}
+{% block content %}
+<h3 style="font-family: 'Kefa';color:#006fb7; margin-left:1em;">Error 404 - Oops! Looks like you made a wrong turn</h3>
+<p style="font-family: 'Kefa';color:#006fb7; margin-left:1em;">Here is something to make you feel better</p>
+<iframe style="display:block; margin:0 auto;" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p style="font-family: 'Kefa';color:#006fb7; margin-left:1em;">click the back button to return to safety</p>
+<a class="back-button" href="{% url 'home' %}">Back</a>
+
+{% endblock %}

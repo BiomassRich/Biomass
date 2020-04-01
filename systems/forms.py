@@ -1,13 +1,16 @@
 from django import forms
 from . import models
 
+
 class AddFuelLogOneForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
        super(AddFuelLogOneForm, self).__init__(*args, **kwargs)
        self.fields['thumb'].label = "Upload a Picture"
+
     class Meta:
         model = models.FuelLogSystemOneMod
-        fields = ['buckets_added','thumb']
+        fields = ['buckets_added','product','thumb']
+
 
 class MonthlyMeterOneForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):

@@ -1,0 +1,12 @@
+{% extends 'base_layout.html'%}
+{% load static from staticfiles %}
+{% block content %}
+<div class="wrapper">
+  <h1>Adding a Product</h1>
+  <form class="site-form" action="{%url 'products:addproducts'%}" method="post">
+      {% csrf_token %}
+      {{form}}
+    <input type="submit" value="Add Product">
+  </form>
+</div>
+{% endblock %}
