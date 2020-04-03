@@ -1,12 +1,5 @@
 {% extends 'base_layout.html' %}
 {% block content %}
-<script type="text/javascript">
-  {% if messages %}
-      {% for message in messages %}
-          alert(message);
-      {% endfor %}
-  {% endif %}
-</script>
 <div class="wrapper">
   <h1>Fuel Log System One</h1>
   <form class="site-form" action="{%url 'systems:fuellogsystemone'%}" method="post" enctype="multipart/form-data">
