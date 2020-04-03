@@ -1,5 +1,12 @@
 {% extends 'base_layout.html' %}
 {% block content %}
+<script type="text/javascript">
+  {% if messages %}
+      {% for message in messages %}
+          alert(message);
+      {% endfor %}
+  {% endif %}
+</script>
 <div class="wrapper">
   <h1>Fuel Log System One</h1>
   <form class="site-form" action="{%url 'systems:fuellogsystemone'%}" method="post" enctype="multipart/form-data">
@@ -7,5 +14,39 @@
       {{form}}
     <input type="submit" value="Add Entry">
   </form>
+  <div class="monthly">
+    <h1>Products</h1>
+    <table>
+      <thead>
+      <th>ID</th>
+      <th>Product Type</th>
+      <th>Product Size</th>
+      <th>Source/Supplier</th>
+      <th>Stock</th>
+      </thead>
+      <tbody>
+    {% for product in products %}
+    <tr>
+        <td>{{product.id}}</td>
+        <td>{{product.product_type}}</td>
+        <td>{{product.product_size}}</td>
+        <td>{{product.source_supplier}}</td>
+        <td>{{product.stock}}</td>
+        </tr>
+      {% endfor %}
+        </tbody>
+      </table>
+  </div>
 </div>
+<!--
+<script>
+
+document.getElementById("id_product").addEventListener("change", formChange);
+
+function formChange() {
+  var productValue = document.getElementById('id_product').value
+
+}
+</script>
+-->
 {% endblock %}

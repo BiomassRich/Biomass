@@ -359,7 +359,7 @@ h1{
 
 
 .site-form{
-margin-top:30px;
+margin-top:20px;
 border: 1px solid #00dba0;
 padding:20px;
 }
@@ -367,6 +367,11 @@ padding:20px;
   display:block;
   margin: 20px 0 5px 0;
   padding: 10px;
+}
+
+.site-form select{
+  display:block;
+  margin: 10px 0;
 }
 
 .site-form input[type="submit"]{

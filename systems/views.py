@@ -2,7 +2,9 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from . import forms
-from .models import *
+from products.models import productsMod
+from systems.models import *
+from django.contrib import messages
 
 @login_required(login_url="/accounts/login/")
 def idfuelLogSystemOne(request,id):
@@ -427,16 +429,28 @@ def monthlySystemTen(request):
 @login_required(login_url="/accounts/login/")
 def fuelLogSystemOne(request):
     entries = FuelLogSystemOneMod.objects.all().order_by('date')
+    products = productsMod.objects.all()
     if request.method == 'POST':
         form = forms.AddFuelLogOneForm(request.POST, request.FILES)
+        productid = form['product'].value()
+        product = productsMod.objects.get(id=productid)
+        bucketsRemoved = form['buckets_added'].value()
+        bucketsRemoved = float(bucketsRemoved)
         if form.is_valid():
+            productid = form['product'].value()
+            product = productsMod.objects.get(id=productid)
+            bucketsRemoved = form['buckets_added'].value()
+            bucketsRemoved = float(bucketsRemoved)
+            product.stock = product.stock - bucketsRemoved
+            product.save()
             instance = form.save(commit=False)
             instance.staff = request.user
             instance.save()
             return redirect('home')
     else:
         form = forms.AddFuelLogOneForm()
-    return render(request,'systems/fuellogsystemone.html',{'form':form,'entry':entries})
+    return render(request,'systems/fuellogsystemone.html',{'form':form,'entry':entries,'products':products})
+
 
 @login_required(login_url="/accounts/login/")
 def fuelLogSystemTwo(request):

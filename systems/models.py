@@ -5,12 +5,12 @@ from products.models import *
 
 class FuelLogSystemOneMod(models.Model):
     products = tuple(productsMod.objects.values_list('id', 'product_type'))
-    buckets_added = models.DecimalField(max_digits=1000,decimal_places=1)
+    buckets_added = models.FloatField()
     date = models.DateTimeField(auto_now_add = True)
     day = models.DateField(auto_now_add = True)
     staff = models.ForeignKey(User,on_delete=models.CASCADE)
     thumb = models.ImageField(blank=True,null=True)
-    product = models.CharField(choices=products,max_length=255)
+    product = models.IntegerField(choices=products,default=0)
     def __str__(self):
         return str(self.id) + " " + str(self.day) + " "  + str(self.staff)
 

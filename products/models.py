@@ -6,7 +6,7 @@ class productsMod(models.Model):
     product_type = models.CharField(max_length=50)
     product_size = models.CharField(max_length=50)
     source_supplier = models.CharField(max_length=50)
-    stock = models.IntegerField()
+    stock = models.FloatField()
     entry_date = models.DateTimeField(auto_now_add = True)
     entry_day = models.DateField(auto_now_add = True)
     staff = models.ForeignKey(User,on_delete=models.CASCADE)
