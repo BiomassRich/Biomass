@@ -37,7 +37,7 @@ hr{
   background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
-  display:block;
+  display:none;
   padding-top: 60px;
   animation-name: leftMenu;
   animation-duration: 0.5s;
@@ -609,7 +609,7 @@ body{
         width: 210mm;
         height: 297mm;
     }
-
+}
 @print-area {
     size: A4;
     margin: 0;
