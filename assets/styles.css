@@ -26,9 +26,66 @@ hr{
   border-bottom:3px solid white;
 }
 
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  display:none;
+  padding-top: 60px;
+  animation-name: leftMenu;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media only screen and (max-width: 500px){
+  .sidenav{
+  animation-name: mobileLeftMenu;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  }
+  .sidenav a {
+  margin:auto;
+  text-align:center;
+  }
+
+}
+
+
+
 .loginimages{
   height:2.5em;
   transform:translateY(30%);
+  cursor:pointer;
 }
 
 .record-view{
@@ -426,7 +483,7 @@ padding:20px;
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 200px; /* Location of the box */
+  padding-top: 90px; /* Location of the box */
   left: 0;
   top: 0;
   cursor:default;
@@ -437,7 +494,7 @@ padding:20px;
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   animation-name: bounce;
   animation-duration: 0.5s;
-  animation-direction: forwards;
+  animation-fill-mode: forwards;
   animation-timing-function: ease;
 }
 
@@ -483,6 +540,10 @@ padding:20px;
 
 .modal{
   padding-top: 300px; /* Location of the box */
+  animation-name: mobileBounce;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
 }
 }
 
@@ -513,10 +574,67 @@ body{
   background-attachment: fixed;
 }
 
+.permit-area{
+  background-color:white;
+  border: 1px solid black;
+  margin:auto;
+  width: 210mm;
+  min-height:297mm;
+  transform:translateY(5%);
+  padding:5px;
+}
+.button-area{
+  text-align:center;
+  margin-top:20px;
+}
+
+.permit-form{
+  display:grid;
+  grid-template-columns:450px auto;
+}
+
+.permit-form input{
+  margin:5px;
+}
+
+@media print {
+    body *{
+      visibility:hidden;
+    }
+    #print-area,#print-area *{
+      visibility:visible;
+    }
+    #print-area{
+        display:block;
+        width: 210mm;
+        height: 297mm;
+    }
+
+@print-area {
+    size: A4;
+    margin: 0;
+}
+
 /* Animation */
 
 @keyframes bounce{
-  0%{opacity:0;}
-  50%{padding-top:210px;}
-  100%{padding-top:200px;,opacity:1;}
+  0%{padding-top:10px;opacity:0;}
+  50%{padding-top:130px;}
+  100%{padding-top:90px;,opacity:1;}
+}
+
+@keyframes mobileBounce{
+  0%{padding-top:50px;opacity:0;}
+  50%{padding-top:330px;}
+  100%{padding-top:300px;,opacity:1;}
+}
+
+@keyframes leftMenu{
+  0%{width:0;opacity:0;display:none;}
+  100%{width:250px;,opacity:1;display:block;}
+}
+
+@keyframes mobileLeftMenu{
+  0%{width:0;opacity:0;display:none;}
+  100%{width:100%;,opacity:1;display:block;}
 }

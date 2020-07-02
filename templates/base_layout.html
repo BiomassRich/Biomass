@@ -9,6 +9,12 @@
     <title>Billingham Biomass</title>
   </head>
   <body>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'permit' %}">Hot Work Permit</a>
+      <a href="#">Cleaning Schedule</a>
+    </div>
     <div class="head">
       <a href="{% url 'home' %}" ><img src="{% static 'Biomass.png' %}" class="logo" alt="Biomass-Logo" ></img></a>
     <nav class="navigation">
@@ -17,7 +23,7 @@
         <li>
           <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
             {% csrf_token %}
-            <img class="loginimages" src="{%static 'User.png'%}" alt="user-img">
+            <img class="loginimages" onclick="openNav()" src="{%static 'User.png'%}" alt="user-img">
             Hello {{user}} <button type="submit"> Log Out </button>
           </form>
         </li>
@@ -31,5 +37,14 @@
 
       {% endblock %}
     </div>
+      <script>
+         function openNav() {
+           document.getElementById("mySidenav").style.display = "block";
+         }
+
+         function closeNav() {
+           document.getElementById("mySidenav").style.display = "none";
+         }
+    </script>
   </body>
 </html>

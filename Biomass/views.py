@@ -8,6 +8,10 @@ def homepage(request):
     return render(request,'homepage.html')
 
 @login_required(login_url="/accounts/login/")
+def permit(request):
+    return render(request,'permit.html')
+
+@login_required(login_url="/accounts/login/")
 def error_404(request,exception):
         data = {}
         return render(request,'error_404.html', data)

@@ -1,0 +1,174 @@
+{% extends 'base_layout.html'%}
+{% load static from staticfiles %}
+{% block content %}
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+<style>
+    .sig-wrapper {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border:dotted 2px black;
+}
+
+.signature-pad {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width:200px;
+  height:50px;
+  background-color: white;
+}
+</style>
+<div class="button-area">
+<button type="button" name="print" onclick="window.print()">Print Document</button>
+<p>If you want to download a PDF of the document, click to print the document and change the printer to Print As PDF</p>
+</div>
+<div class="permit-area" id="print-area">
+  <h1>Hot Work Permit</h1>
+  <div class="warningLabel">
+    Before initiating hot work, can this job be avoided? is there a safer way?
+  </div>
+  <p>This hot work permit is required for any temporary operation involving open flames or which produces heat and/or sparks.
+    This includes, but not limited for Brazing, Cutting, Grinding, Soldering, Thawing Pipe, Torch Applied Roofing, Welding and the use of Heat Guns</p>
+    <form class="permit-form" action="" method="post">
+      <div class="formColumnOne">
+      <h3>REQUIRED PRECAUTIONS CHECKLIST</h3>
+      <input type="checkbox" id="precaution1" name="precaution1">
+      <label for="precaution1"> Available sprinklers, hose streams and extinguishers are in service.</label><br>
+      <input type="checkbox" id="precaution2" name="precaution2">
+      <label for="precaution2">Hot Work equipment in good repair</label><br>
+      <h3>WITHIN 35 FEET OF WORK</h3>
+      <input type="checkbox" id="within1" name="within1">
+      <label for="within1">Flammable liquids, dust, lint and oily depoists removed.</label><br>
+      <input type="checkbox" id="within2" name="within2">
+      <label for="within2">Explosive atmosphere in area eliminated</label><br>
+      <input type="checkbox" id="within3" name="within3">
+      <label for="within3">Floors swewpt clean of combustibles with damp sand, metal or fire-resistive tarpaulins.</label><br>
+      <input type="checkbox" id="within4" name="within4">
+      <label for="within4">Remove other combustibles or protect with fire-resistive tarpaulins or metal shields.</label><br>
+      <input type="checkbox" id="within5" name="within5">
+      <label for="within5">All wall and floor openings covered.</label><br>
+      <input type="checkbox" id="within6" name="within6">
+      <label for="within6">Fire-ressistive tarpaulins suspended beneath work to collect sparks.</label><br>
+      <h3>WORK ON WALLS OR CEILINGS</h3>
+      <input type="checkbox" id="wall-ceilings1" name="wall-ceilings1">
+      <label for="wall-ceilings1">Construction noncombustible and without combustible covering.</label><br>
+      <input type="checkbox" id="wall-ceilings2" name="wall-ceilings2">
+      <label for="wall-ceilings2">Combustibles moved away from other side of walls.</label><br>
+      <h3>WORK ON ENCLOSED EQUIPMENT</h3>
+      <input type="checkbox" id="enclosed1" name="enclosed1">
+      <label for="enclosed1">Equipment cleaned of all combustibles.</label><br>
+      <input type="checkbox" id="enclosed2" name="enclosed2">
+      <label for="enclosed2">Containers purged of flammable vapors.</label><br>
+      <h3>FIRE WATCH</h3>
+      <input type="checkbox" id="fireWatch1" name="fireWatch1">
+      <label for="fireWatch1">Fire watch to be provided during and for 60 minutes after work in all areas.</label><br>
+      <input type="checkbox" id="fireWatch2" name="fireWatch2">
+      <label for="fireWatch2">Fire watch to be provided for 4 hours after work in areas with smoke detection.</label><br>
+      <input type="checkbox" id="fireWatch3" name="fireWatch3">
+      <label for="fireWatch3">Supplied with appropriate extinguisher(s).</label><br>
+      <input type="checkbox" id="fireWatch4" name="fireWatch4">
+      <label for="fireWatch4">Trained in the use of equipment and in sounding fire alarm.</label><br>
+      <input type="checkbox" id="fireWatch5" name="fireWatch5">
+      <label for="fireWatch5">Fire wtch may be required for adjoining areas above and below.</label><br>
+      <h3>OTHER PRECAUTIONS TAKEN</h3>
+      <textarea name="precautions" rows="4" cols="80">
+      </textarea>
+      </div>
+      <div class="formColumnTwo">
+        <h3>HOT WORK BEING DONE BY:</h3>
+        <label for="doneBy1">Employee:</label>
+        <input type="text" id="doneBy1" name="doneBy1"><br>
+        <label for="doneBy2">Department:</label>
+        <input type="text" id="doneBy2" name="doneBy2"><br>
+        <label for="doneBy3">Date:</label>
+        <input type="date" id="doneBy3" name="doneBy3"><br>
+        <label for="doneBy4">Permit Expires:</label>
+        <input type="date" id="doneBy4" name="doneBy4"><br>
+        <h3>Signed By:</h3>
+        <div class="sig-wrapper">
+            <canvas id="signature-pad" class="signature-pad" width=400 height=200></canvas>
+        </div>
+      </div>
+
+    </form>
+</div>
+
+
+
+
+  <script>
+          var canvas = document.getElementById('signature-pad');
+
+    // Adjust canvas coordinate space taking into account pixel ratio,
+    // to make it look crisp on mobile devices.
+    // This also causes canvas to be cleared.
+    function resizeCanvas() {
+        // When zoomed out to less than 100%, for some very strange reason,
+        // some browsers report devicePixelRatio as less than 1
+        // and only part of the canvas is cleared then.
+        var ratio =  Math.max(window.devicePixelRatio || 1, 1);
+        canvas.width = canvas.offsetWidth * ratio;
+        canvas.height = canvas.offsetHeight * ratio;
+        canvas.getContext("2d").scale(ratio, ratio);
+    }
+
+    window.onresize = resizeCanvas;
+    resizeCanvas();
+
+    var signaturePad = new SignaturePad(canvas, {
+      backgroundColor: 'rgb(255, 255, 255)' // necessary for saving image as JPEG; can be removed is only saving as PNG or SVG
+    });
+
+    document.getElementById('save-png').addEventListener('click', function () {
+      if (signaturePad.isEmpty()) {
+        return alert("Please provide a signature first.");
+      }
+
+      var data = signaturePad.toDataURL('image/png');
+      console.log(data);
+      window.open(data);
+    });
+
+    document.getElementById('save-jpeg').addEventListener('click', function () {
+      if (signaturePad.isEmpty()) {
+        return alert("Please provide a signature first.");
+      }
+
+      var data = signaturePad.toDataURL('image/jpeg');
+      console.log(data);
+      window.open(data);
+    });
+
+    document.getElementById('save-svg').addEventListener('click', function () {
+      if (signaturePad.isEmpty()) {
+        return alert("Please provide a signature first.");
+      }
+
+      var data = signaturePad.toDataURL('image/svg+xml');
+      console.log(data);
+      console.log(atob(data.split(',')[1]));
+      window.open(data);
+    });
+
+    document.getElementById('clear').addEventListener('click', function () {
+      signaturePad.clear();
+    });
+
+    document.getElementById('draw').addEventListener('click', function () {
+      var ctx = canvas.getContext('2d');
+      console.log(ctx.globalCompositeOperation);
+      ctx.globalCompositeOperation = 'source-over'; // default value
+    });
+
+    document.getElementById('erase').addEventListener('click', function () {
+      var ctx = canvas.getContext('2d');
+      ctx.globalCompositeOperation = 'destination-out';
+    });
+
+  </script>
+{% endblock %}
