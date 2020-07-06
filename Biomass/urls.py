@@ -17,6 +17,7 @@ urlpatterns = [
     path('fueldelivery/' ,include('fueldelivery.urls')),
     path('products/' ,include('products.urls')),
     path('reports/' ,include('reports.urls')),
+    path('schedule/',include('schedule.urls')),
     path('permit/',views.permit,name="permit"),
     path('',views.homepage,name="home"),
 ]

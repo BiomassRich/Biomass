@@ -1,0 +1,140 @@
+.calendar {
+  width: 98%;
+  margin: auto;
+  font-size: 13px;
+}
+
+.calendar tr, .calendar td {
+  border: 1px solid white;
+}
+
+.calendar th {
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  color:#5804b7;
+  font-weight:bold;
+  border:2px solid white;
+}
+
+.calendar td {
+  width: 200px;
+  height: 150px;
+  padding: 20px 0px 0px 5px;
+}
+
+.month {
+  font-size: 25px;
+}
+
+.date {
+  font-size: 16px;
+}
+
+ul {
+  height: 100%;
+  padding: 0px 5px 0px 20px;
+  list-style-type:upper-roman;
+}
+
+table a {
+  background-color:rgb(0,118,188);
+  border-radius:10px;
+  color:white;
+  padding:5px;
+  margin:2px;
+  display:block;
+  font-size:14px;
+  font-weight:bold;
+  text-decoration:none;
+  transition:all 1s;
+}
+
+table a:hover{
+  text-decoration:none;
+  color:#0056b3;
+  background-color:rgba(232, 240, 245, 0.75);
+}
+
+table a:visited{
+  text-decoration:none;
+  background-color:rgb(0,118,188)
+  transition:all 1s;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.btn {
+  outline: none;
+  color: black;
+  background-color: #00dba0;
+  border:0;
+  color:#fff;
+  font-size:1.2em;
+  margin:10px 15px 30px;
+  border-radius:4px;
+  cursor:pointer;
+  box-shadow: 0 0 0 0;
+  transition:background-color 1s;
+  padding:10px;
+  text-decoration:none;
+
+}
+
+.btn:hover{
+  background-color:#138496;
+}
+
+.clearfix {
+  display:inline-block;
+  width:100%;
+  margin-top:10px;
+}
+
+
+
+
+.form-table {
+  display:block;
+  margin-left:35%;
+  width:50%;
+  margin-top:2em;
+}
+
+.form input, .form select, .form textarea {
+  border-radius: 10px;
+  border: 1px solid #17a2b8;
+  outline: none;
+  background: none;
+  padding: 10px;
+  width: 100%;
+  margin:5px 0px 10px 0px;
+  font-size:16px;
+  box-sizing:border-box;
+
+}
+
+.form-table input , .form-table textarea{
+  background-color:white;
+  transition:box-shadow 1s;
+}
+
+.form-table input:focus , .form-table textarea:focus{
+  box-shadow:5px 5px 10px #49505796;
+}
+
+.form-table th{
+  border:none;
+  text-align:center;
+  vertical-align:baseline;
+  color:white;
+  font-weight:bold;
+  font-size:20px;
+  font-family
+}

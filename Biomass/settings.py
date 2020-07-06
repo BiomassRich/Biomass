@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'fueldelivery',
     'reports',
     'products',
+    'schedule',
 ]
 
 MIDDLEWARE = [

@@ -13,7 +13,7 @@
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <a href="{% url 'home' %}">Home</a>
       <a href="{% url 'permit' %}">Hot Work Permit</a>
-      <a href="#">Cleaning Schedule</a>
+      <a href="{% url 'schedule:calendar'%}">Cleaning Schedule</a>
     </div>
     <div class="head">
       <a href="{% url 'home' %}" ><img src="{% static 'Biomass.png' %}" class="logo" alt="Biomass-Logo" ></img></a>
