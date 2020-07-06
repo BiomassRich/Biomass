@@ -13,6 +13,6 @@ class Event(models.Model):
     @property
     def get_html_url(self):
         url = reverse('schedule:event_edit', args=(self.id,))
-        return f'<a href="{url}"> {self.title} {self.startTime()} </a>'
+        return f'<a title="{self.description}" href="{url}"> {self.title} {self.startTime()} </a>'
     def __str__(self):
         return str(self.title) + " " + str(self.start_time) + " "  + str(self.end_time)
