@@ -7,8 +7,74 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Billingham Biomass</title>
+    <style media="screen">
+    #loading-mod
+{
+display:flex;
+justify-content:center ;
+align-items:center;
+min-height:100vh;
+background:#000;
+}
+.loader
+{
+position:relative;
+width: 150px;
+height: 150px;
+border-radius: 50%;
+background: linear-gradient(45deg,transparent,
+transparent 40%, #e5f403);
+animation: animate 2s linear infinite;
+}
+
+.loader:before
+{
+content: '';
+position: absolute;
+top: 6px;
+left: 6px;
+right: 6px;
+bottom: 6px;
+background: #000;
+border-radius:50%;
+z-index: 1000;
+}
+.loader:after
+{
+content: '';
+position:absolute;
+top:0px;
+left:0px;
+right:0px;
+bottom:0px;
+background:linear-gradient(45deg,transparent,
+transparent 40%, #e5f403);
+border-radius:50%;
+z-index: 1000;
+z-index:1;
+filter: blur(30px);
+}
+
+@keyframes animate
+{
+ 0%
+ { transform: rotate(0deg);
+ filter:hue-rotate(0deg);
+ }
+ 100%
+ {
+  transform: rotate(360deg);
+   filter:hue-rotate(360deg);
+ }
+}
+}
+    </style>
   </head>
   <body>
+    <div id="loading-mod">
+      <div class="loader">
+      </div>
+    </div>
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <a href="{% url 'home' %}">Home</a>
@@ -45,6 +111,15 @@
          function closeNav() {
            document.getElementById("mySidenav").style.display = "none";
          }
+         document.onreadystatechange = function() {
+    if (document.readyState !== "complete") {
+        document.querySelector("body").style.visibility = "hidden";
+        document.querySelector("#loading-mod").style.visibility = "visible";
+    } else {
+        document.querySelector("#loading-mod").style.display = "none";
+        document.querySelector("body").style.visibility = "visible";
+    }
+};
     </script>
   </body>
 </html>
