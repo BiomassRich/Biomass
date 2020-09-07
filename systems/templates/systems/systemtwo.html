@@ -46,7 +46,7 @@
       <td><a href="{% url 'systems:idfuellogsystemtwo' id=entryFuel.id%}">{{entryFuel.id}}</a></td>
       <td>{{entryFuel.buckets_added}}</td>
       <td>{{entryFuel.date}}</td>
-      <td>{{entryFuel.day}}</td>
+      <td>{{entryFuel.day|date:"l"}}</td>
       <td>{{entryFuel.staff}}</td>
       </tr>
     {% endfor %}
