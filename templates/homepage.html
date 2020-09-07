@@ -170,7 +170,7 @@
         </div>
       </div>
     </div>
-
+<!-- Systems Nine and Ten are no longer needed at this moment. Commented out incase they are needed in future
     <div class="container" onclick="menuButton9(this)">
       <h3 class="system-button">System Nine</h3>
       <div class="barmenu">
@@ -178,7 +178,7 @@
         <div class="bar2"></div>
         <div class="bar3"></div>
         <div id="system9Modal" class="modal">
-          <!-- Modal content -->
+
           <div class="modal-content">
             <a href="{% url 'systems:systemnine' %}">System Nine</a>
             <a class="link-button" href="{% url 'systems:fuellogsystemnine'%}">Add Fuel Log</a>
@@ -197,7 +197,7 @@
         <div class="bar2"></div>
         <div class="bar3"></div>
         <div id="system10Modal" class="modal">
-          <!-- Modal content -->
+
           <div class="modal-content">
             <a href="{% url 'systems:systemten' %}">System Ten</a>
             <a class="link-button" href="{% url 'systems:fuellogsystemten'%}">Add Fuel Log</a>
@@ -208,7 +208,7 @@
         </div>
       </div>
     </div>
-
+-->
   </div>
   <hr>
   <script>
@@ -221,9 +221,9 @@
     var modal6 = document.getElementById("system6Modal");
     var modal7 = document.getElementById("system7Modal");
     var modal8 = document.getElementById("system8Modal");
-    var modal9 = document.getElementById("system9Modal");
-    var modal10 = document.getElementById("system10Modal");
-
+    //Systems Nine and Ten are no longer needed at this moment so commented out in case they may be needed in future.
+    //var modal9 = document.getElementById("system9Modal");
+    //var modal10 = document.getElementById("system10Modal");
   function menuButton(x) {
     fuel.style.display = "block";
     menuToggle(x);
@@ -268,7 +268,8 @@
     modal8.style.display = "block";
     menuToggle(x);
   }
-
+/*
+Systems Nine and ten are not needed at the moment so commented out in case of future need.
   function menuButton9(x) {
     modal9.style.display = "block";
     menuToggle(x);
@@ -278,7 +279,7 @@
     modal10.style.display = "block";
     menuToggle(x);
   }
-
+*/
   function menuToggle(x) {
     x.classList.toggle("change");
   }
@@ -315,12 +316,14 @@
       case modal8:
         modal8.style.display = "none";
         break;
+        /* Commenting out Systems Nine and Ten until they are needed again
       case modal9:
         modal9.style.display = "none";
         break;
       case modal10:
         modal10.style.display = "none";
         break;
+        */
     }
   }
 
