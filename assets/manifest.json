@@ -1,0 +1,33 @@
+{
+    "name": "Billingham Biomass App",
+    "short_name": "Biomass",
+    "start_url": "/",
+    "scope": "..",
+    "display": "standalone",
+    "background_color": "#FFF",
+    "theme_color": "#6ef4b2",
+    "description": "PWA for Biomass",
+    "dir": "ltr",
+    "lang": "en-US",
+    "orientation": "portrait-primary",
+    "icons": [{
+        "src": "aurss96x96.png",
+        "type": "image/png",
+        "sizes": "96x96"
+    },
+    {
+        "src": "favicon-32x32.png",
+        "type": "image/png",
+        "sizes": "32x32"
+    },
+    {
+        "src": "android-chrome-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192",
+        "purpose": "any maskable"
+    },{
+        "src": "aurss512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+    }]
+}

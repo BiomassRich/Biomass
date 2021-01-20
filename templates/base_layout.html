@@ -4,6 +4,14 @@
 <html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" href="{% static 'styles.css'%}">
+    <link rel="manifest" href="{% static 'manifest.json' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png'%}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png'%}">
+    <link rel="manifest" href="{% static 'site.webmanifest'%}">
+    <link rel="mask-icon" href="{% static 'safari-pinned-tab.svg'%}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#6ef4b2">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Billingham Biomass</title>
@@ -96,6 +104,14 @@ filter: blur(30px);
         {% endif %}
       </ul>
     </nav>
+
+</div>
+
+<div id="offlineModal" class="offmodal">
+  <div class="offmodal-content">
+    <h2>You are offline</h2>
+    <h3>this app will only work online</h3>
+  </div>
 </div>
 
     <div class="wrapper">
@@ -104,6 +120,9 @@ filter: blur(30px);
       {% endblock %}
     </div>
       <script>
+      window.addEventListener('online',checkOnline);
+      window.addEventListener('offline',checkOnline);
+      window.onload = checkOnline;
          function openNav() {
            document.getElementById("mySidenav").style.display = "block";
          }
@@ -120,6 +139,24 @@ filter: blur(30px);
         document.querySelector("body").style.visibility = "visible";
     }
 };
+  if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('{% url "sw.js" %}', { scope: '/' }).then(function(reg) {
+          // registration worked
+          console.log('Registration succeeded. Scope is ' + reg.scope);
+      }).catch(function(error) {
+          // registration failed
+          console.log('Registration failed with ' + error);
+      });
+  }
+  function checkOnline() {
+    var offlineC = document.getElementById("offlineModal");
+    if(navigator.onLine){
+      offlineC.style.display = "none";
+    }
+    else{
+      offlineC.style.display = "block";
+    }
+  };
     </script>
   </body>
 </html>

@@ -23,6 +23,10 @@ def permit(request):
         pass
     return render(request,'permit.html')
 
+
+def offlinePage(request):
+    return render(request,'offline.html')
+
 @login_required(login_url="/accounts/login/")
 def error_404(request,exception):
         data = {}
