@@ -10,6 +10,7 @@ from django.conf.urls import handler404, handler500
 
 
 urlpatterns = [
+    path('sw.js',TemplateView.as_view(template_name="sw.js",content_type='application/javascript'), name='sw.js'),
     path("robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),),
     path('admin/', admin.site.urls),
     path('accounts/',include('accounts.urls')),

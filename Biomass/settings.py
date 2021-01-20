@@ -120,7 +120,7 @@ USE_TZ = True
 
 DATETIME_INPUT_FORMATS = ['%Y-%m-%dT%H:%M',
                         '%Y/%m/%dT%H:%M',
-                        '%d/%m/%Y %H:%M',]  
+                        '%d/%m/%Y %H:%M',]
 
 
 # Static files (CSS, JavaScript, Images)
