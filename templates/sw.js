@@ -1,12 +1,12 @@
-const VERSION = '{{ 1.1 }}';
+const VERSION = '{{ 1.2 }}';
 const staticCachePrefix = 'static';
 const staticCacheName = `${staticCachePrefix}-${VERSION}`;
 const dynamicCacheName = 'dynamic';
 const appShell = [
     '/offline/',
-    '/static/styles.css',
-    '/static/User.png',
-    '/static/bb.png',
+    '/assets/styles.css',
+    '/assets/User.png',
+    '/assets/bb.png',
 ].map((partialUrl) => `${location.protocol}//${location.host}${partialUrl}`);
 const maxNumberItemsDynamicCache = 5;
 const urlsToCacheTimes = new Map();
